@@ -1,0 +1,59 @@
+app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+
+
+.homepage-header {
+    width: 90%;
+    position: absolute;
+    z-index: 0;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homepage-header {
+    .main-heading {
+        font-size: 3.5vw;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 2vh 1vw;
+    }
+
+    /* Media queries for different viewport sizes */
+    @media screen and (max-width: 768px) {
+        .main-heading {
+            font-size: 6vw;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .main-heading {
+            font-size: 8vw;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .main-heading {
+            font-size: 54px;
+        }
+    }
+
+    .sub-heading-1 {
+        font-size:15px;
+        font-weight: 400;
+        margin: 1vh 1vw;
+    }
+    @media screen and (min-width: 1200px) {
+        .sub-heading-1 {
+            font-size: 20px;
+        }
+    }
+    
+}
