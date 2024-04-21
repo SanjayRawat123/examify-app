@@ -1,10 +1,95 @@
+.navbar {
+    background-color: #ffd9e1 !important;
+
+    .navbar-brand {
+        h1 {
+            color: #ba005c;
+            font-weight: 700;
+        }
+
+    }
+
+    .right-side {
+        label {
+            width: 110px;
+            height: 50px;
+            position: relative;
+            display: block;
+            background: #fff;
+            border-radius: 200px;
+            // box-shadow: inset 0px 5px 15px rgba(0, 0, 0,0), inset 0px -5px 15px rgba(255, 255, 255, 0);
+            cursor: pointer;
+        }
+
+        label:after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(180deg, #ffcc89, #d8860b);
+            border-radius: 180px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+
+        input:checked+label {
+            background: rgba(10, 6, 10, 0.8);;
+        }
+
+        input:checked+label:after {
+            left: 100px;
+            transform: translateX(-100%);
+            background: linear-gradient(180deg, #777, #3a3a3a);
+        }
+
+        label,
+        label:after {
+            transition: 0.3s
+        }
+
+        label:active:after {
+            width: 130px;
+        }
 
 
-.navbar{
-    background-color: #ffd9e1!important;
+        label svg {
+            position: absolute;
+            width: 30px;
+            top:17px;
+            z-index: 100;
+          }
+          label svg.bi-sun {
+            left:10px;
+            fill:#fff;
+            transition: 0.3s;
+          }
+          label svg.bi-moon {
+            left:70px;
+            fill:#7e7e7e;
+            transition: 0.3s;
+          }
+          input:checked + label svg.bi-sun {
+            fill:#7e7e7e;
+          }
+          input:checked + label svg.bi-moon {
+            fill:#fff;
+          }
+    }
 
-    .navbar-brand{
+
+    .btn-flat-primary {
+        background-color: transparent !important ;
+        color: #ba005c
+    }
+    .btn-flat-primary,.btn-flat-primary:active,.btn-flat-primary:focus {
         color: #ba005c;
-        font-weight: 700;
+        // background-color: #ff922a!important;
     }
 }

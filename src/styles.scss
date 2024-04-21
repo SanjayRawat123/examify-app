@@ -1,11 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import './@core-scss/variables.scss';
+@import 'bootstrap/scss/bootstrap';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/dm-sans";
+
+@import './@core-scss/dark-theam.scss';
 
 html,
 body {
     height: 100%;
     margin: 0;
     font-family: "DM Sans";
+    // background: rgba(10, 6, 10, 0.8);
 }
 
+.round {
+    border-radius: 1.5rem;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    padding: .786rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1;
+}

@@ -24,6 +24,7 @@ app-navbar {
         font-weight: 600;
         line-height: 1.2;
         margin: 2vh 1vw;
+        color: #ba005c;
     }
 
     /* Media queries for different viewport sizes */
@@ -49,6 +50,7 @@ app-navbar {
         font-size:15px;
         font-weight: 400;
         margin: 1vh 1vw;
+        // color: #fff;
     }
     @media screen and (min-width: 1200px) {
         .sub-heading-1 {

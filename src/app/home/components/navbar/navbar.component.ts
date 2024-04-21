@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ThemeService } from 'src/app/ui-services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,20 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  constructor(private modalService: NgbModal) {}
-  ngOnInit(): void {}
+  constructor(
+    private modalService: NgbModal,
+    public themeService: ThemeService
+  ) {}
+
+  ngOnInit(): void {
+
+  }
+
   public open(modal: any): void {
     this.modalService.open(modal);
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }
