@@ -5,10 +5,16 @@ import { HomeRoutingModule } from './home-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { SignComponent } from './components/sign/sign.component';
-import { MatButtonModule } from '@angular/material/button';
+
+import { HomeContainsViewComponent } from './components/home-contains-view/home-contains-view.component';
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, SignComponent],
-  imports: [CommonModule, HomeRoutingModule, NgbModule, MatButtonModule],
+  declarations: [
+    HomeComponent,
+    NavbarComponent,
+    SignComponent,
+    HomeContainsViewComponent,
+  ],
+  imports: [CommonModule, HomeRoutingModule, NgbModule],
 })
 export class HomeModule {}

@@ -8,6 +8,8 @@ import { ThemeService } from 'src/app/ui-services/theme.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+centered: any;
+
   constructor(
     private modalService: NgbModal,
     public themeService: ThemeService
