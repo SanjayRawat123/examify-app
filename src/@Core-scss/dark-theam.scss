@@ -1,5 +1,5 @@
 .dark-theme {
-    background: rgba(10, 6, 10, 0.8);
+    background:  rgba(10, 6, 10, 0.72);;
 
     h1,
     h2,
@@ -11,6 +11,15 @@
     }
 
     p{
+        color: #fff;
+    }
+
+
+    .card{
+        background-color: rgba(10, 6, 10, 0.8);
+    }
+
+    .text-muted{
         color: #fff;
     }
 }

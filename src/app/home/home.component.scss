@@ -1,7 +1,7 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Ensure the page takes up the full height of the viewport */
+    height: 100vh; 
   }
   
   .app-navbar {
@@ -13,7 +13,7 @@
   }
   
   .content-container {
-    flex: 1; /* Take up remaining vertical space */
-    overflow-y: auto; /* Allow content to be scrolled if it overflows */
-    padding-top: 50px; /* Adjust this value to match the height of your navbar */
+    flex: 1; 
+    overflow-y: auto; 
+    padding-top: 50px; 
   }
