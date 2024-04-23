@@ -1,5 +1,6 @@
 .dark-theme {
-    background:  rgba(10, 6, 10, 0.72);;
+    background: rgba(10, 6, 10, 1);
+    ;
 
     h1,
     h2,
@@ -10,16 +11,32 @@
         color: #fff;
     }
 
-    p{
+    p {
         color: #fff;
     }
 
 
-    .card{
-        background-color: rgba(10, 6, 10, 0.8);
+    .card {
+        background-color: rgba(35, 35, 35, 1);
     }
 
-    .text-muted{
-        color: #fff;
+    .text-muted {
+        color: floralwhite !important;
     }
+
+    .form-control {
+        background-color: #212529;
+        border: 1px solid #495057;
+        color: #dee2e6;
+    }
+
+    .input {
+        background-color: #212529 !important;
+    }
+
+
+    label.form-label {
+        color: #dee2e6 !important;
+    }
+
 }

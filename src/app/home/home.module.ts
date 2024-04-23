@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SignComponent } from './components/sign/sign.component';
 
 import { HomeContainsViewComponent } from './components/home-contains-view/home-contains-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,6 @@ import { HomeContainsViewComponent } from './components/home-contains-view/home-
     SignComponent,
     HomeContainsViewComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, NgbModule],
+  imports: [CommonModule, HomeRoutingModule, NgbModule, ReactiveFormsModule],
 })
 export class HomeModule {}

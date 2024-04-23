@@ -11,7 +11,6 @@ body {
     height: 100%;
     margin: 0;
     font-family: "DM Sans";
-    // background: rgba(10, 6, 10, 0.8);
 }
 
 .round {
@@ -26,4 +25,23 @@ body {
     padding: .786rem 1.5rem;
     font-size: 1rem;
     line-height: 1;
+}
+
+.card {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+input.form-control {
+    display: block;
+    width: 100%;
+    height: 2.714rem;
+    padding: .438rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.45;
+    background-clip: padding-box;
+    border: 1px solid #d8d6de;
+    border-radius: .357rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
