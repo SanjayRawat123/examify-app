@@ -1,6 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeService } from 'src/app/ui-services/theme.service';
+import { UserLoginComponent } from '../user-login/user-login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -19,8 +20,8 @@ centered: any;
 
   }
 
-  public open(modal: any): void {
-    this.modalService.open(modal);
+  public open(): void {
+    this.modalService.open(UserLoginComponent);
   }
 
   toggleTheme() {

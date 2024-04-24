@@ -1,6 +1,5 @@
 .dark-theme {
     background: rgba(10, 6, 10, 1);
-    ;
 
     h1,
     h2,
@@ -18,6 +17,7 @@
 
     .card {
         background-color: rgba(35, 35, 35, 1);
+        // background-color: #2f2f2f;
     }
 
     .text-muted {
@@ -25,7 +25,7 @@
     }
 
     .form-control {
-        background-color: #212529;
+        background-color: #212529 !important;
         border: 1px solid #495057;
         color: #dee2e6;
     }
@@ -37,6 +37,23 @@
 
     label.form-label {
         color: #dee2e6 !important;
+    }
+
+
+
+    //////////////pop model scss
+
+     .modal-content {
+        background-color: #292b2c;
+        color: white;
+    }
+
+    .close {
+        color: white;
+    }
+
+    .light-blue-backdrop {
+        background-color: #5cb3fd;
     }
 
 }

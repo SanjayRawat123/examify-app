@@ -8,6 +8,8 @@ import { SignComponent } from './components/sign/sign.component';
 
 import { HomeContainsViewComponent } from './components/home-contains-view/home-contains-view.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreDirectivesModule } from 'src/@Core-scss/directives/directives';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     SignComponent,
     HomeContainsViewComponent,
+    UserLoginComponent
   ],
-  imports: [CommonModule, HomeRoutingModule, NgbModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    CoreDirectivesModule,
+  ],
 })
 export class HomeModule {}

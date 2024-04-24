@@ -25,6 +25,8 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "feather-icons": "^4.29.1",
+    "node-waves": "^0.7.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.4"
@@ -34,6 +36,7 @@
     "@angular/cli": "^17.3.5",
     "@angular/compiler-cli": "^17.3.4",
     "@angular/localize": "^17.3.4",
+    "@types/feather-icons": "^4.29.4",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

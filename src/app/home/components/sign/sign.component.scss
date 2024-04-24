@@ -1,13 +1,27 @@
-.signup-form {
-    padding-right: 50px;
-    padding-left: 50px;
+// .signup-form {
+//     padding-right: 90px;
+//     padding-left: 90px;
 
-    img {
-        width: 90%;
-    }
+//     img {
+//         width: 90%;
+//     }
 
-}
+// }
 
-.form-group-margin{
+.form-group-margin {
     margin-bottom: 1rem;
 }
+
+.signup-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .signup-img img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        // border: 1px solid red;
+
+    }
