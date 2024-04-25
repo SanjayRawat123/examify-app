@@ -10,6 +10,8 @@ import { HomeContainsViewComponent } from './components/home-contains-view/home-
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreDirectivesModule } from 'src/@Core-scss/directives/directives';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from '../backend-services/user-service/user.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     NavbarComponent,
     SignComponent,
     HomeContainsViewComponent,
-    UserLoginComponent
+    UserLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,8 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     NgbModule,
     ReactiveFormsModule,
     CoreDirectivesModule,
+    HttpClientModule,
   ],
+  providers: [UserService],
 })
 export class HomeModule {}

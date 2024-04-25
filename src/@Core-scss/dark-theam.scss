@@ -17,7 +17,9 @@
 
     .card {
         background-color: rgba(35, 35, 35, 1);
-        // background-color: #2f2f2f;
+        // border: none;
+        // margin-bottom: 2rem;
+       
     }
 
     .text-muted {
@@ -39,11 +41,16 @@
         color: #dee2e6 !important;
     }
 
-
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #232323 inset !important;
+        -webkit-text-fill-color: #b4b7bd !important;
+    }
 
     //////////////pop model scss
 
-     .modal-content {
+    .modal-content {
         background-color: #292b2c;
         color: white;
     }

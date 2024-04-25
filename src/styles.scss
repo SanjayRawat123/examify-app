@@ -1,17 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import './@core-scss/variables.scss';
+@import './@core-scss/core.scss';
+@import './@core-scss/dark-theam.scss';
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/dm-sans";
 
-@import './@core-scss/dark-theam.scss';
+
 
 html,
 body {
     height: 100%;
     margin: 0;
     font-family: "DM Sans";
-    background: #FAF9F6;
+    background: #f8f8f8;
+
 }
 
 .round {
@@ -29,7 +32,8 @@ body {
 }
 
 .card {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, .1);
+    transition: all .3s ease-in-out, background 0s, color 0s, border-color 0s;
     border: none;
 }
 
@@ -44,4 +48,3 @@ input .form-control {
     border-radius: .357rem;
 
 }
-

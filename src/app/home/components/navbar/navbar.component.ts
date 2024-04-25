@@ -9,19 +9,12 @@ import { UserLoginComponent } from '../user-login/user-login.component';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-centered: any;
-
-  constructor(
-    private modalService: NgbModal,
-    public themeService: ThemeService
-  ) {}
+  centered: any;
+  isDarkeMode: boolean = false;
+  constructor(public themeService: ThemeService) {}
 
   ngOnInit(): void {
-
-  }
-
-  public open(): void {
-    this.modalService.open(UserLoginComponent);
+    this.isDarkeMode = this.themeService.getDarkTheme;
   }
 
   toggleTheme() {

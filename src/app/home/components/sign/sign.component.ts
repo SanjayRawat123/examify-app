@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { matchPasswords } from './validators/match-passwords.validator';
+import { UserService } from 'src/app/backend-services/user-service/user.service';
+import { Data } from 'src/types/examify-interface';
 
 @Component({
   selector: 'app-sign',
@@ -14,17 +16,9 @@ import { matchPasswords } from './validators/match-passwords.validator';
 })
 export class SignComponent implements OnInit {
   userSignupForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
-  // export interface UserSigUp {
-  //   id?: number;
-  //   userName: string;
-  //   password: string;
-  //   firstName: string;
-  //   lastName: string;
-  //   email: string;
-  //   phone: string;
-  //   profile: string;
-  // }
+
+  constructor(private fb: FormBuilder, private userService: UserService) {}
+
   ngOnInit(): void {
     this.userSignupForm = this.fb.group(
       {
@@ -43,7 +37,7 @@ export class SignComponent implements OnInit {
     );
   }
 
-  get userName(): AbstractControl<string, string> | null {
+  get userName(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('userName');
   }
 
@@ -65,5 +59,23 @@ export class SignComponent implements OnInit {
   get phone(): AbstractControl<any, any> | null {
     return this.userSignupForm.get('phone');
   }
-  onSubmit(): void {}
+  onSubmit(): void {
+    const user: Data.UserSigUp = {
+      userName: this.userSignupForm?.get('userName')?.value,
+      firstName: this.firstName?.value,
+      lastName: this.userSignupForm.get('lastName')?.value,
+      email: this.userSignupForm.get('email')?.value,
+      password: this.userSignupForm.get('password')?.value,
+      phone: this.userSignupForm.get('phone')?.value,
+      profile: 'default.png',
+    };
+    this.userService.createUser(user).subscribe(
+      (data: Data.UserSigUp) => {
+        console.log(data);
+      },
+      (erorr) => {
+        console.log(erorr);
+      }
+    );
+  }
 }
