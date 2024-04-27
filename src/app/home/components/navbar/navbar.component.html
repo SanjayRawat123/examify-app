@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-sm p-0">
+<nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="">
-            <h1>Examify</h1>
+            <img src="../../../../assets/logo-2.png" class="img-fluid" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
                 </li>
             </ul>
             <form class="d-flex right-side">
-                <input type="checkbox" id="darkmode-toggle" (change)="toggleTheme()" />
+                <!-- <input type="checkbox" id="darkmode-toggle" (change)="toggleTheme()" /> -->
                 <!-- <label for="darkmode-toggle" class="me-2">
                     <svg  xmlns="http://www.w3.org/2000/svg" *ngIf="!isDarkeMode" width="20" height="20" fill="currentColor" class="bi bi-sun"
                         viewBox="0 0 16 16">
@@ -27,7 +27,10 @@
                             d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
                     </svg>
                 </label> -->
-                
+                <a type="button" class="d-flex align-items-center" (click)="toggleTheme()">
+                    <i *ngIf="!isDarkeMode" data-feather="moon" style="color: #000;"></i>
+                    <i *ngIf="isDarkeMode" data-feather="sun" style="color: #fff;"></i>
+                </a>
                 <button type="button" class="btn btn-flat-primary round me-2" rippleEffect
                     [routerLink]="'user/login'">LOGIN</button>
                 <button type="button" class="btn btn-outline-primary round me-2" [routerLink]="'user/sign'">SIGN

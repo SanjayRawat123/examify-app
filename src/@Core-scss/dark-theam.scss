@@ -60,7 +60,14 @@
     }
 
     .light-blue-backdrop {
-        background-color: #5cb3fd;
+        background-color:  0 4px 24px 0 #5cb3fd;
     }
 
+
+
+    .navbar {
+        background-color: #000 !important;
+        border-bottom: 1px solid #c3c3c3;
+        box-shadow: #5cb3fd !important;
+    }
 }
