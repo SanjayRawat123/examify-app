@@ -61,7 +61,7 @@ export class SignComponent implements OnInit {
   }
   onSubmit(): void {
     const user: Data.UserSigUp = {
-      userName: this.userSignupForm?.get('userName')?.value,
+      username: this.userSignupForm?.get('userName')?.value,
       firstName: this.firstName?.value,
       lastName: this.userSignupForm.get('lastName')?.value,
       email: this.userSignupForm.get('email')?.value,

@@ -6,6 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import { UserService } from 'src/app/backend-services/user-service/user.service';
+import { Data } from 'src/types/examify-interface';
 
 @Component({
   selector: 'app-user-login',
@@ -19,8 +22,8 @@ export class UserLoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    // private userService: UserService,
-    // private location: Location
+    private userService: UserService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -39,21 +42,36 @@ export class UserLoginComponent {
   }
 
   onSubmit(): void {
-    //   this.userService.login(this.email?.value, this.password?.value).subscribe({
-    //     next: (result: LoginToken) => {
-    //       result.user.email = this.email?.value;
-    //       this.userService.activateToken(result);
-    //       this.alertType = 0;
-    //       this.alertMessage = 'Login successful';
-    //       setTimeout(() => {
-    //         this.location.back();
-    //       }, 1000);
-    //     },
-    //     error: (error) => {
-    //       this.alertType = 2;
-    //       this.alertMessage = error.error.message;
-    //     },
-    //   });
-    // }
+    const userLogin: Data.UserLogin = {
+      username: this.userName?.value,
+      password: this.password?.value,
+    };
+    this.userService.login(userLogin).subscribe({
+      next: (result: Data.LoginToken) => {
+        console.log(result);
+        this.userService.loginUser(result.token);
+        this.userService.getCurrenUser().subscribe((user: any) => {
+          this.userService.setUser(user);
+          console.log(user);
+        });
+      },
+      error: (error) => {
+        console.log('error', error);
+        this.alertType = 2;
+        this.alertMessage = error.error.message;
+      },
+    });
+  }
+
+  showSuccess() {
+    // const user: Data.UserSigUp = this.getUser();
+    console.log('heloi');
+    this.toastr.success(
+      'You have successfully logged in as an ' +
+        
+        ' user to Vuexy. Now you can start to explore. Enjoy! 🎉',
+      '👋 Welcome,  !',
+      { toastClass: 'toast ngx-toastr', closeButton: true }
+    );
   }
 }

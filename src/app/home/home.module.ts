@@ -12,6 +12,7 @@ import { CoreDirectivesModule } from 'src/@Core-scss/directives/directives';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../backend-services/user-service/user.service';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserService } from '../backend-services/user-service/user.service';
     ReactiveFormsModule,
     CoreDirectivesModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [UserService],
+  providers: [UserService, provideToastr()],
 })
 export class HomeModule {}
