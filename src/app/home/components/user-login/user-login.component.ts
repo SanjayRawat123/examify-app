@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/backend-services/user-service/user.service';
@@ -23,7 +25,8 @@ export class UserLoginComponent {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private toastr: ToastrService
+    private snack: MatSnackBar,
+    private route:Router
   ) {}
 
   ngOnInit(): void {
@@ -50,9 +53,15 @@ export class UserLoginComponent {
       next: (result: Data.LoginToken) => {
         console.log(result);
         this.userService.loginUser(result.token);
-        this.userService.getCurrenUser().subscribe((user: any) => {
+        this.userService.getCurrenUser().subscribe((user: Data.User) => {
           this.userService.setUser(user);
           console.log(user);
+          this.showSuccess();
+          if (this.userService.userRole() == 'Admin') {
+            this.route.navigate(['admin'])
+          }else{
+            this.route.navigate(['user'])
+          }
         });
       },
       error: (error) => {
@@ -64,14 +73,18 @@ export class UserLoginComponent {
   }
 
   showSuccess() {
-    // const user: Data.UserSigUp = this.getUser();
-    console.log('heloi');
-    this.toastr.success(
-      'You have successfully logged in as an ' +
-        
-        ' user to Vuexy. Now you can start to explore. Enjoy! 🎉',
-      '👋 Welcome,  !',
-      { toastClass: 'toast ngx-toastr', closeButton: true }
+    const user: Data.User = this.userService.getUser();
+    const userRole = this.userService.userRole();
+    this.snack.open(
+      `You have successfully logged in as an user ${userRole} user to Examify.
+       Now you can start to explore. Enjoy! 🎉 .
+       👋 Welcome,' ${user.firstName} ${user.lastName} + '!'`,
+      '',
+      {
+        duration: 7000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+      }
     );
   }
 }

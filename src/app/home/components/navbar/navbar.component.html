@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Home</a>
+                    <a class="nav-link active" aria-current="page" [routerLink]="'/home'">Home</a>
                 </li>
             </ul>
             <form class="d-flex right-side">
@@ -31,10 +31,15 @@
                     <i *ngIf="!isDarkeMode" data-feather="moon" style="color: #000;"></i>
                     <i *ngIf="isDarkeMode" data-feather="sun" style="color: #fff;"></i>
                 </a>
+
                 <button type="button" class="btn btn-flat-primary round me-2" rippleEffect
                     [routerLink]="'user/login'">LOGIN</button>
+                <!-- 
                 <button type="button" class="btn btn-outline-primary round me-2" [routerLink]="'user/sign'">SIGN
-                    UP</button>
+                    UP</button> -->
+                <span>
+                    <img class="round" height="44" width="44" src="../../../../assets/images/user.png" alt="">
+                </span>
             </form>
         </div>
     </div>

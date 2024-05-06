@@ -5,8 +5,9 @@
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/dm-sans";
-@import '~ngx-toastr/toastr';
 
+$purple: #7367f0;
+$primary: $purple ;
 
 html,
 body {

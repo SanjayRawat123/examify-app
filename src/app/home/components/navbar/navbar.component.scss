@@ -8,10 +8,10 @@
         //     margin-bottom: 0;
         // }
 
-        img{
+        img {
             max-height: 40px;
 
-            
+
         }
 
     }
@@ -47,7 +47,8 @@
         }
 
         input:checked+label {
-            background: rgba(10, 6, 10, 0.8);;
+            background: rgba(10, 6, 10, 0.8);
+            ;
         }
 
         input:checked+label:after {
@@ -69,35 +70,47 @@
         label svg {
             position: absolute;
             width: 30px;
-            top:16px;
+            top: 16px;
             z-index: 100;
-          }
-          label svg.bi-sun {
-            left:10px;
-            fill:#fff;
+        }
+
+        label svg.bi-sun {
+            left: 10px;
+            fill: #fff;
             transition: 0.3s;
-          }
-          label svg.bi-moon {
-            left:70px;
-            fill:#7e7e7e;
+        }
+
+        label svg.bi-moon {
+            left: 70px;
+            fill: #7e7e7e;
             transition: 0.3s;
-          }
-          input:checked + label svg.bi-sun {
-            fill:#7e7e7e;
-          }
-          input:checked + label svg.bi-moon {
-            fill:#fff;
-          }
+        }
+
+        input:checked+label svg.bi-sun {
+            fill: #7e7e7e;
+        }
+
+        input:checked+label svg.bi-moon {
+            fill: #fff;
+        }
     }
 
 
     .btn-flat-primary {
-        background-color: transparent !important ;
+        background-color: transparent !important;
         color: #ba005c
     }
-    .btn-flat-primary,.btn-flat-primary:active,.btn-flat-primary:focus {
+
+    .btn-flat-primary,
+    .btn-flat-primary:active,
+    .btn-flat-primary:focus {
         color: #ba005c;
         // background-color: #ff922a!important;
     }
+
+
 }
 
+.dropdown-toggle::after {
+    display: none;
+}

@@ -9,15 +9,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ThemeService } from './ui-services/theme.service';
 import { CoreDirectivesModule } from 'src/@Core-scss/directives/directives';
-
+import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { authInterceptorProviders } from './ui-services/auth.interceptor';
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HomeModule,CoreDirectivesModule],
-  providers: [
-    provideAnimationsAsync(),
-    ThemeService
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HomeModule,
+    CoreDirectivesModule,
+    MatSnackBarModule,
   ],
+  providers: [provideAnimationsAsync(), ThemeService,authInterceptorProviders],
   bootstrap: [AppComponent],
- 
 })
 export class AppModule {}
