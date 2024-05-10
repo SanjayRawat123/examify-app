@@ -17,10 +17,23 @@
 
     .card {
         background-color: rgba(35, 35, 35, 1);
-        // border: none;
-        // margin-bottom: 2rem;
-       
     }
+
+    //dropdown pop menu csss
+    .dropdown-menu {
+        background-color: #232323;
+
+        .dropdown-item {
+            color: #b4b7bd;
+        }
+
+        .dropdown-divider {
+            border-color: #3b4253;
+        }
+    }
+
+
+    //end dropdown pop menu css 
 
     .text-muted {
         color: floralwhite !important;
@@ -60,14 +73,27 @@
     }
 
     .light-blue-backdrop {
-        background-color:  0 4px 24px 0 #5cb3fd;
+        background-color: 0 4px 24px 0 #5cb3fd;
     }
 
 
 
     .navbar {
         background-color: #000 !important;
-        border-bottom: 1px solid #c3c3c3;
+        border-bottom: 1px solid rgb(79, 79, 79);
         box-shadow: #5cb3fd !important;
+        color: #fff !important;
+
+        li .nav-item {
+            color: #fff !important;
+        }
+
+        a.nav-link {
+            color: #fff !important;
+        }
+
+        a.nav-link .active {
+            color: #005CBB;
+        }
     }
 }
