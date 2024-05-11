@@ -91,9 +91,18 @@
         a.nav-link {
             color: #fff !important;
         }
+    }
 
-        a.nav-link .active {
-            color: #005CBB;
-        }
+    .nav-item.active .nav-link {
+        font-weight: 600;
+        border-radius: 200px;
+        background-color: rgb(199, 221, 251, 0.1) !important;
+        color: rgb(0, 92, 187) !important;
+    }
+
+    .hover:hover {
+        border-radius: 200px;
+        background-color: rgb(199, 221, 251, 0.1) !important;
+        color: #005CBB !important;
     }
 }
