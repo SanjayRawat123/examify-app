@@ -1,0 +1,22 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    color: #6e6b7b;
+    background: #fff;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.sidebar-expanded {
+    width: 200px;
+    /* Change as per your expanded width */
+}
+
+.sidebar-collapsed {
+    width: 78px;
+    /* Change as per your collapsed width */
+}
