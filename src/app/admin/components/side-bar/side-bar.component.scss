@@ -6,17 +6,153 @@
     width: 78px;
     color: #6e6b7b;
     background: #fff;
-    padding: 6px 14px;
+    padding: 6px 6px;
     z-index: 99;
     transition: all 0.5s ease;
 }
 
+
+.sidebar i {
+    color: #6e6b7b;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebar .nav-list {
+    margin-top: 20px;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.sidebar li {
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+}
+
+.sidebar li .tooltip {
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar li:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// .sidebar li a {
+//     display: flex;
+//     border-radius: 12px;
+//     align-items: center;
+//     text-decoration: none;
+//     transition: all 0.4s ease;
+//     background: #11101D;
+//     padding-left: 10px;
+// }
+
+.sidebar li a:hover {
+    background: linear-gradient(118deg, #e9f0f5, rgba(233, 240, 245, .7));
+    box-shadow: 0 0 10px 1px #e9f0f5b3;
+    color: #216093;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.sidebar li a .links_name {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+    transition: all 0.5s ease;
+    color: #216093;
+}
+
+.sidebar li i {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.sidebar li.profile {
+    position: fixed;
+    height: 60px;
+    width: 78px;
+    left: 0;
+    bottom: -8px;
+    padding: 10px 14px;
+    background: #1d1b31;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+//expand and collaps scss
 .sidebar-expanded {
-    width: 200px;
-    /* Change as per your expanded width */
+    width: 250px;
 }
 
 .sidebar-collapsed {
     width: 78px;
-    /* Change as per your collapsed width */
+}
+
+.sidebar-expanded li .tooltip {
+    display: none;
+}
+
+.sidebar-expanded li a .links_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar-expanded li.profile {
+    width: 250px;
+}
+
+.sidebar-expanded li a {
+    display: flex;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: #11101D;
+    padding-left: 10px;
+}
+
+.sidebar-collapsed li a {
+    display: flex;
+    border-radius: 12px;
+    padding-left: 15px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: #11101D;
+}
+
+
+@media (max-width: 420px) {
+    .sidebar li .tooltip {
+        display: none;
+    }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @Component({
   selector: 'app-admin',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent {
-  isSidebarOpen = false;
+  isSidebarExpanded: boolean = false;
 
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+  onSidebarToggled(isExpanded: boolean) {
+    this.isSidebarExpanded = isExpanded;
   }
 }

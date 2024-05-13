@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './@core-scss/variables.scss';
 @import './@core-scss/core.scss';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/dm-sans";
@@ -13,7 +14,7 @@ body {
     height: 100%;
     margin: 0;
     font-family: "DM Sans";
-    background: rgb(244,244,252);
+    background: rgb(244, 244, 252);
 
 }
 

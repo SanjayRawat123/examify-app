@@ -1,13 +1,26 @@
 <div class="main-menu sidebar " [ngClass]="{'sidebar-expanded': isExpanded, 'sidebar-collapsed': !isExpanded}">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" (click)="toggleSidebar()" aria-current="page">Active</a>
+    <ul class="nav-list">
+        <li>
+            <button type="button" (click)="toggleSidebar() "></button>
+
         </li>
-        <li class="nav-item">
-            <a class="nav-link">Link</a>
+        <li>
+            <a href="#">
+                <i data-feather="grid"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
         </li>
-        <li class="nav-item">
-            <a class="nav-link">Link</a>
+
+        <li class="profile">
+            <div class="profile-details">
+                <img src="../../../../assets/logo-2.png" alt="profileImg">
+                <div class="name_job">
+                    <div class="name">Prem Shahi</div>
+                    <div class="job">Web designer</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out"></i>
         </li>
     </ul>
 </div>
