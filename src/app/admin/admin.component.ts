@@ -7,7 +7,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent {
-  isSidebarExpanded: boolean = false;
+  isSidebarExpanded: boolean = true;
 
   onSidebarToggled(isExpanded: boolean) {
     this.isSidebarExpanded = isExpanded;
