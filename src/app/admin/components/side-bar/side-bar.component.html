@@ -1,15 +1,15 @@
 <div class="main-menu sidebar " [ngClass]="{'sidebar-expanded': isExpanded, 'sidebar-collapsed': !isExpanded}">
     <ul class="nav-list">
         <li>
-            <button type="button" (click)="toggleSidebar() "></button>
+            <button type="button" (click)="toggleSidebar() "> menu</button>
 
         </li>
-        <li>
-            <a href="#">
-                <i data-feather="grid"></i>
-                <span class="links_name">Dashboard</span>
+        <li *ngFor="let item of menu" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="item.url">
+                <i class="bi {{item.icon}} "></i>
+                <span class="links_name">{{item.title}}</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">{{item.title}}</span>
         </li>
 
         <li class="profile">

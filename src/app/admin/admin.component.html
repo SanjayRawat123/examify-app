@@ -2,6 +2,6 @@
     <app-side-bar (sidebarToggled)="onSidebarToggled($event)"></app-side-bar>
     <section class="contents"
         [ngClass]="{'sidebar-expanded': isSidebarExpanded, 'sidebar-collapsed': !isSidebarExpanded}">
-        <div class="text">Dashboard</div>
+        <router-outlet></router-outlet>
     </section>
 </div>
