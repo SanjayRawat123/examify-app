@@ -1,6 +1,5 @@
 .contents {
     position: relative;
-    background: #E4E9F7;
     min-height: 100vh;
     top: 0;
     left: 78px;
@@ -17,4 +16,12 @@
 .contents.sidebar-collapsed {
     left: 78px;
     width: calc(100% - 78px);
+}
+
+.dark-theme {
+    // .contents {
+    //     background: rgba(10, 6, 10, 1);
+
+    // }
+
 }

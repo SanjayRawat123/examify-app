@@ -1,10 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CoreMenu } from 'src/types/core-menu';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class SideBarComponent {
   isExpanded: boolean = true;

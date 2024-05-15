@@ -35,7 +35,6 @@
 }
 
 .sidebar .logo-details .logo_name {
-    color: #625f6e;
     font-size: 20px;
     font-weight: 600;
     opacity: 0;
@@ -162,4 +161,30 @@
     .sidebar li .tooltip {
         display: none;
     }
+}
+
+.dark-theme {
+    .sidebar {
+        background: #11101D;
+        color: #FFF;
+
+        li a {
+            color: #fff;
+        }
+    }
+
+    li a.active {
+        background: (118deg, rgb(233, 240, 245, 1), rgba(233, 240, 245, 1));
+        box-shadow: none;
+        color: #216093;
+        font-weight: 600;
+    }
+
+    a:hover:not(.active) {
+        background: linear-gradient(118deg, #e9f0f5, rgba(233, 240, 245, .7));
+        box-shadow: none;
+        color: #216093;
+        font-weight: 600;
+    }
+
 }

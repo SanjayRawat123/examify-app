@@ -29,8 +29,10 @@ export class ThemeService {
 
   private applyTheme() {
     if (this.isDarkTheme) {
+      console.log(this.isDarkTheme);
       this.renderer.addClass(document.body, this.DARK_THEME_CLASS);
     } else {
+      console.log("remove dark mode",this.isDarkTheme);
       this.renderer.removeClass(document.body, this.DARK_THEME_CLASS);
     }
   }
