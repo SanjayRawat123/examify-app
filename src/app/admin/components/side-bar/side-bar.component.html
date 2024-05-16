@@ -1,20 +1,3 @@
-<!-- <div class="main-menu sidebar " [ngClass]="{'sidebar-expanded': isExpanded, 'sidebar-collapsed': !isExpanded}">
-    <ul class="nav-list">
-        <li>
-            <button type="button" (click)="toggleSidebar() "> menu</button>
-
-        </li>
-        <li *ngFor="let item of menu" [routerLinkActive]="['active-link']" [routerLinkActiveOptions]="{exact: true}">
-            <a [routerLink]="item.url">
-                <i class="bi {{item.icon}} "></i>
-                <span class="links_name">{{item.title}}</span>
-            </a>
-            <span class="tooltip">{{item.title}}</span>
-        </li>
-
-
-    </ul>
-</div> -->
 <div class="sidebar" [ngClass]="{'open': isExpanded, 'close': !isExpanded}">
     <div class="logo-details">
         <div class="d-flex align-items-center">

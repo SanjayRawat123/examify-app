@@ -8,7 +8,7 @@
     background: #fff;
     padding: 6px 6px;
     z-index: 99;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .sidebar.open {
@@ -17,6 +17,29 @@
 
 .sidebar .close {
     width: 78px;
+}
+
+.sidebar:hover:not(.open) {
+    width: 220px;
+    z-index: 100;
+
+    .logo-details .icon,
+    .logo-details .logo_name {
+        opacity: 1;
+    }
+
+    li .tooltip {
+        display: none;
+    }
+
+    li a .links_name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .logo-details #btn {
+        text-align: right;
+    }
 }
 
 .sidebar .logo-details {
@@ -132,6 +155,8 @@
         transform: translateY(-50%);
     }
 
+
+
     li a.active {
         background: linear-gradient(118deg, #e9f0f5, rgba(233, 240, 245, .7));
         box-shadow: 0 0 10px 1px #e9f0f5b3;
@@ -174,16 +199,16 @@
     }
 
     li a.active {
-        background: (118deg, rgb(233, 240, 245, 1), rgba(233, 240, 245, 1));
+        background: linear-gradient(118deg, rgba(233, 240, 245, .9), rgba(107, 147, 176, 1));
         box-shadow: none;
         color: #216093;
         font-weight: 600;
     }
 
     a:hover:not(.active) {
-        background: linear-gradient(118deg, #e9f0f5, rgba(233, 240, 245, .7));
+        background: linear-gradient(118deg, #e9f0f5, rgba(107, 147, 176, 1));
         box-shadow: none;
-        color: #216093;
+        color: rgb(33, 96, 147);
         font-weight: 600;
     }
 
