@@ -1,10 +1,12 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
   HostListener,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { SidebarCollapseService } from 'src/app/ui-services/side-bar-service/sidenar-collapse.service';
 import { CoreMenu } from 'src/types/core-menu';
 
 @Component({
@@ -15,26 +17,32 @@ import { CoreMenu } from 'src/types/core-menu';
 })
 export class SideBarComponent {
   isExpanded: boolean = true;
-  isHoverable: boolean = false;
-  @Output() sidebarToggled = new EventEmitter<boolean>();
+  isVisible: boolean = true;
+  showToggleSidebarIcon: boolean = true;
 
-  toggleSidebar() {
-    this.isExpanded = !this.isExpanded;
-    this.sidebarToggled.emit(this.isExpanded);
-    setTimeout(() => {
-      if (!this.isExpanded) {
-        console.log("hello hover ")
-        this.isHoverable = true;
-      }
-    }, 1000);
-  }
+  constructor(
+    private sidebarService: SidebarCollapseService,
+    private elementRef: ElementRef
+  ) {}
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isHoverable = window.innerWidth >= 768;
-    if (!this.isHoverable) {
-      this.isExpanded = false; // Collapse sidebar on small screens
-    }
+  ngAfterViewInit(): void {
+    const sidebar = this.elementRef.nativeElement.querySelector('.sidebar');
+    const sidebarOpenBtn = document.querySelector(
+      '#sidebar-open'
+    ) as HTMLElement;
+    const sidebarCloseBtn = document.querySelector(
+      '#sidebar-close'
+    ) as HTMLElement;
+    const sidebarLockBtn = this.elementRef.nativeElement.querySelector(
+      '#lock-icon'
+    ) as HTMLElement;
+
+    this.sidebarService.init(
+      sidebar,
+      sidebarOpenBtn,
+      sidebarCloseBtn,
+      sidebarLockBtn
+    );
   }
 
   menu: CoreMenu[] = [

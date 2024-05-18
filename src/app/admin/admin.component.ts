@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { SidebarCollapseService } from '../ui-services/side-bar-service/sidenar-collapse.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +11,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 export class AdminComponent {
   isSidebarExpanded: boolean = true;
 
-  onSidebarToggled(isExpanded: boolean) {
-    this.isSidebarExpanded = isExpanded;
+  constructor(private sidebarService: SidebarCollapseService) {
+  
   }
 }

@@ -5,18 +5,45 @@
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/dm-sans";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+body {
+    min-height: 100vh;
+    background: #eef5fe;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.nav_image {
+    display: flex;
+    align-items: center;
+}
+
+.nav_image img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
 
 $purple: #7367f0;
 $primary: $purple ;
 
 html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: "DM Sans";
-    background: rgb(244, 244, 252);
+// body {
+//     height: 100%;
+//     margin: 0;
+//     font-family: "DM Sans";
+//     background: rgb(244, 244, 252);
 
-}
+// }
 
 .round {
     border-radius: 1.5rem;

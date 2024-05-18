@@ -38,48 +38,6 @@
 }
 
 
-//dropDown scss <>
-.dropdown-toggle::after {
-    display: none;
-}
-
-.dropdown-menu[data-bs-popper] {
-    top: 100%;
-    left: auto;
-    margin-top: var(--bs-dropdown-spacer);
-    right: 0;
-}
-
-.dropdown-item {
-    font-size: 14px;
-
-    svg.feather {
-        width: 14px;
-        height: 14px;
-    }
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-    background-color: rgba(33, 96, 147, .12);
-    color: #005CBB;
-}
-
-
-
-////////////////dropDown scss  </>
-
-/// ////// feather icon scss<>
-.avatar-status-online {
-    border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border: 1px solid #fff;
-    background-color: #28c76f;
-}
 
 
 /// feather icon scss</>

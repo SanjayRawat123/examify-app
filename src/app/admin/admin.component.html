@@ -1,9 +1,8 @@
 <div class="container-fluid">
-    <app-side-bar (sidebarToggled)="onSidebarToggled($event)"></app-side-bar>
-    <section class="fixed-navbar"
-        [ngClass]="{'sidebar-expanded': isSidebarExpanded, 'sidebar-collapsed': !isSidebarExpanded}">
+    <section>
         <app-shared-navbar></app-shared-navbar>
     </section>
+    <app-side-bar></app-side-bar>
     <section class="contents"
         [ngClass]="{'sidebar-expanded': isSidebarExpanded, 'sidebar-collapsed': !isSidebarExpanded}">
         <router-outlet></router-outlet>

@@ -1,21 +1,95 @@
-<div class="sidebar" [ngClass]="{'open': isExpanded, 'close': !isExpanded}">
-    <div class="logo-details">
-        <div class="d-flex align-items-center">
-            <i class='bx bi bi-alexa icon'></i>
-            <div class="logo_name">Examify</div>
-        </div>
-        <div>
-            <i *ngIf="!isExpanded" class="bi bi-lock" id="btn" (click)="toggleSidebar()"></i>
-            <i *ngIf="isExpanded" class="bi bi-unlock" id="btn" (click)="toggleSidebar()"></i>
-        </div>
+<!-- sidebar.component.html -->
+<nav class="sidebar locked">
+    <div class="logo_items flex">
+      <span class="nav_image">
+        <img src="../../../../assets/images/log-back-e.svg" alt="logo_img" />
+      </span>
+      <span class="logo_name">Examify</span>
+      <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
+      <i class="bx bx-x" id="sidebar-close"></i>
     </div>
-    <ul class="nav-list">
-        <li *ngFor="let item of menu">
-            <a [routerLink]="item.url" routerLinkActive="active" href="#home">
-                <i class="bi {{item.icon}} "></i>
-                <span class="links_name">{{item.title}}</span>
+  
+    <div class="menu_container">
+      <div class="menu_items">
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Dashboard</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-home-alt"></i>
+              <span>Overview</span>
             </a>
-            <span class="tooltip">{{item.title}}</span>
-        </li>
-    </ul>
-</div>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-grid-alt"></i>
+              <span>All Projects</span>
+            </a>
+          </li>
+        </ul>
+  
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Editor</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bxs-magic-wand"></i>
+              <span>Magic Build</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-folder"></i>
+              <span>New Projects</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-cloud-upload"></i>
+              <span>Upload New</span>
+            </a>
+          </li>
+        </ul>
+  
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Setting</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-flag"></i>
+              <span>Notice Board</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-award"></i>
+              <span>Award</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-cog"></i>
+              <span>Setting</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="sidebar_profile flex">
+        <span class="nav_image">
+          <img src="assets/images/profile.jpg" alt="profile_img" />
+        </span>
+        <div class="data_text">
+          <span class="name">David Oliva</span>
+          <span class="email">david&#64;gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
