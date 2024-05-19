@@ -3,26 +3,35 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 270px;
+    width: 250px;
     background: #fff;
-    padding: 15px 10px;
+    padding: 15px 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
+
+    ol,
+    ul {
+        padding-left: 0rem;
+    }
 }
 
 .sidebar.close {
-    width: calc(55px + 20px);
+    width: calc(55px + 10px);
 }
 
 .logo_items {
-    gap: 8px;
+    // gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .logo_name {
     font-size: 22px;
     color: #333;
     font-weight: 500px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .sidebar.close .logo_name,
@@ -36,7 +45,7 @@
 #sidebar-close {
     padding: 10px;
     color: #4070f4;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
     margin-left: -4px;
     transition: all 0.3s ease;
@@ -106,8 +115,8 @@
 }
 
 .link:hover {
-    color: #fff;
-    background-color: #4070f4;
+    background-color: rgba(33, 96, 147, .12);
+    color: #005CBB;
 }
 
 .link span {
@@ -141,7 +150,7 @@
     color: #333;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .sidebar {
         left: 0;
         z-index: 1000;
@@ -157,5 +166,29 @@
 
     #lock-icon {
         display: none;
+    }
+}
+
+
+///drak leyout
+.dark-theme {
+    .sidebar {
+        background: rgb(21, 20, 26, 1);
+        box-shadow: 0 0 2px #c5c5c6;
+    }
+
+    .logo_name {
+        color:#FFF
+    }
+    .menu_item,
+    .link {
+        color: #fff;
+    }
+
+    .link.active,
+    .link:hover {
+        background-color: rgba(33, 96, 147, .2);
+        color: #005CBB;
+        font-weight: 600;
     }
 }

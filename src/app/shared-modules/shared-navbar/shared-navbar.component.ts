@@ -10,9 +10,11 @@ export class SharedNavbarComponent {
   isSidebarExpanded: boolean = true;
 
   constructor(private sidebarService: SidebarCollapseService) {
-   
+    this.sidebarService.isExpanded$.subscribe((isExpanded: boolean) => {
+      console.log(isExpanded);
+      this.isSidebarExpanded = isExpanded;
+    });
   }
-
 
   
 }

@@ -3,6 +3,7 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
+  OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
@@ -15,15 +16,13 @@ import { CoreMenu } from 'src/types/core-menu';
   styleUrl: './side-bar.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class SideBarComponent {
-  isExpanded: boolean = true;
-  isVisible: boolean = true;
-  showToggleSidebarIcon: boolean = true;
-
+export class SideBarComponent implements OnInit {
   constructor(
     private sidebarService: SidebarCollapseService,
     private elementRef: ElementRef
-  ) {}
+  ) {
+  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const sidebar = this.elementRef.nativeElement.querySelector('.sidebar');

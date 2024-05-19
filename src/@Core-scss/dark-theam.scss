@@ -1,5 +1,5 @@
 .dark-theme {
-    background: rgba(10, 6, 10, 1) ;
+    background: #000;
 
     h1,
     h2,
@@ -16,7 +16,8 @@
 
 
     .card {
-        background-color: rgba(35, 35, 35, 1);
+        // background-color: rgba(35, 35, 35, 1);
+        background-color: #2a2830;
     }
 
     //dropdown pop menu csss
@@ -79,9 +80,10 @@
 
 
     .navbar {
-        background-color: #000 !important;
-        border-bottom: 1px solid rgb(79, 79, 79);
-        box-shadow: #5cb3fd !important;
+        background-color: #15141a !important;
+        border-bottom: 1px solid #5c5c56;
+        // box-shadow: 0 0 10px #5c5c56;
+        box-sizing: border-box;
         color: #fff !important;
 
         li .nav-item {

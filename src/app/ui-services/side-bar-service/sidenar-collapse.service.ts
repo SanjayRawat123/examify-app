@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { HostListener, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -9,6 +9,8 @@ export class SidebarCollapseService {
   private sidebarOpenBtn!: HTMLElement;
   private sidebarCloseBtn!: HTMLElement;
   private sidebarLockBtn!: HTMLElement;
+  private isExpandedSubject = new BehaviorSubject<boolean>(true);
+  isExpanded$ = this.isExpandedSubject.asObservable();
 
   init(
     sidebar: HTMLElement,
@@ -22,7 +24,7 @@ export class SidebarCollapseService {
     this.sidebarLockBtn = sidebarLockBtn;
 
     this.addEventListeners();
-    this.initializeSidebarState();
+    this.updateSidebarState();
   }
 
   private addEventListeners() {
@@ -40,14 +42,15 @@ export class SidebarCollapseService {
   }
 
   private toggleLock() {
-    this.sidebar.classList.toggle('locked');
-    if (!this.sidebar.classList.contains('locked')) {
+    const isLocked = this.sidebar.classList.toggle('locked');
+    if (!isLocked) {
       this.sidebar.classList.add('hoverable');
       this.sidebarLockBtn.classList.replace('bx-lock-alt', 'bx-lock-open-alt');
     } else {
       this.sidebar.classList.remove('hoverable');
       this.sidebarLockBtn.classList.replace('bx-lock-open-alt', 'bx-lock-alt');
     }
+    this.isExpandedSubject.next(isLocked);
   }
 
   private hideSidebar() {
@@ -66,15 +69,23 @@ export class SidebarCollapseService {
     this.sidebar.classList.toggle('close');
   }
 
-  private initializeSidebarState() {
-    if (window.innerWidth < 800) {
+  private updateSidebarState() {
+    if (window.innerWidth < 1025) {
       this.sidebar.classList.add('close');
       this.sidebar.classList.remove('locked');
       this.sidebar.classList.remove('hoverable');
+      this.isExpandedSubject.next(false);
     } else {
+      this.sidebar.classList.remove('hoverable');
+      this.sidebar.classList.remove('close');
       this.sidebar.classList.add('locked');
-      this.sidebar.classList.add('hoverable');
-      this.sidebarLockBtn.classList.replace('bx-lock-alt', 'bx-lock-open-alt');
+      this.sidebarLockBtn.classList.replace('bx-lock-open-alt', 'bx-lock-alt');
+      this.isExpandedSubject.next(true);
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateSidebarState();
   }
 }
