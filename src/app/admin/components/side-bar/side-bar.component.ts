@@ -20,8 +20,7 @@ export class SideBarComponent implements OnInit {
   constructor(
     private sidebarService: SidebarCollapseService,
     private elementRef: ElementRef
-  ) {
-  }
+  ) {}
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
@@ -49,7 +48,7 @@ export class SideBarComponent implements OnInit {
       id: 'categories',
       title: 'Categories',
       type: 'item',
-      icon: 'bi-list-ul',
+      icon: 'bx-category',
       url: 'categories',
     },
     {
@@ -63,7 +62,7 @@ export class SideBarComponent implements OnInit {
       id: 'profile',
       title: 'Profile',
       type: 'item',
-      icon: 'bi-question-square',
+      icon: 'bx-user',
       url: 'profile',
     },
   ];

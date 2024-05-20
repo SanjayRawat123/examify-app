@@ -30,6 +30,7 @@
 
             <li class="nav-item" *ngIf="isLoggedIn">
                 <a class="nav-link d-inline-block " ngbDropdown>
+                    
                     <div class="position-relative">
                         <img class="round" height="35" width="35" src="../../../../assets/images/user.png" alt=""
                             id="dropdownBasic1" ngbDropdownToggle>
@@ -38,7 +39,8 @@
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button ngbDropdownItem><i data-feather="user" size="15"></i> Profile</button>
                         <div class="dropdown-divider"></div>
-                        <button ngbDropdownItem><i data-feather="log-out" size="15"></i> Log out</button>
+                        <button ngbDropdownItem (click)="logout()"><i data-feather="log-out" size="15"></i> Log
+                            out</button>
                     </div>
                 </a>
             </li>

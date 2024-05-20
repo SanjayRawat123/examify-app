@@ -18,7 +18,7 @@
         </div>
         <li class="item" *ngFor="let item of menu">
           <a class="link flex" [routerLink]="item.url" routerLinkActive="active">
-            <i class="bx bx-home-alt"></i>
+            <i class="bx {{item.icon}}"></i>
             <span>{{item.title}}</span>
           </a>
         </li>

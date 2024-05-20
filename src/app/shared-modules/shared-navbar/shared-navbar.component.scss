@@ -88,3 +88,25 @@
     border: 1px solid #fff;
     background-color: #28c76f;
 }
+
+
+
+
+.user-item {
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Align items to the right end */
+
+        .user-name {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: #888;
+        }
+    }
+}

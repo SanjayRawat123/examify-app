@@ -114,9 +114,12 @@
     color: #707070;
 }
 
+
+.link.active,
 .link:hover {
-    background-color: rgba(33, 96, 147, .12);
+    background-color: rgba(33, 96, 147, .2);
     color: #005CBB;
+    font-weight: 600;
 }
 
 .link span {
@@ -150,6 +153,7 @@
     color: #333;
 }
 
+
 @media screen and (max-width: 1024px) {
     .sidebar {
         left: 0;
@@ -178,8 +182,9 @@
     }
 
     .logo_name {
-        color:#FFF
+        color: #FFF
     }
+
     .menu_item,
     .link {
         color: #fff;
@@ -191,4 +196,5 @@
         color: #005CBB;
         font-weight: 600;
     }
+
 }
