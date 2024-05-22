@@ -1,12 +1,4 @@
 .profile-card {
-    // width: 100%;
-    // max-width: 600px;
-    // margin: auto;
-    // text-align: center;
-    // border: 1px solid #ddd;
-    // border-radius: 10px;
-    // overflow: hidden;
-    // box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
     .profile-background img {
         height: 200px;
@@ -18,12 +10,13 @@
     }
 
     .profile-picture {
+        display: inline-block;
         position: relative;
         width: 100px;
         height: 100px;
         border-radius: 50%;
         overflow: hidden;
-        margin: -60px 0 10px 10px;
+        margin-top: -4rem;
         border: 5px solid white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer;
@@ -35,4 +28,23 @@
         object-fit: cover;
     }
 
+    .edit-img {
+        position: relative;
+        bottom: 10px;
+        right: 0;
+        left: 75px;
+        margin-top: -2rem;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #005CBB;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 3px solid white;
+    }
 }

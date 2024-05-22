@@ -4,7 +4,7 @@
     left: 0;
     height: 100%;
     width: 250px;
-    background: #fff;
+    background-color: #fff;
     padding: 15px 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
@@ -178,7 +178,7 @@
 ///drak leyout
 .dark-theme {
     .sidebar {
-        background: #1E1E1E;
+        background-color: #1E1E1E !important;
         box-shadow: none;
         border-right: 1px solid #5c5c56;
     }

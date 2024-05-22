@@ -26,9 +26,13 @@
     </div>
     <div class="profile-content">
         <div class="profile-picture">
-            <img id="profileImage" [src]="profileImageSrc" alt="Profile Picture">
+            <img [src]="profileImageSrc" alt="Profile Picture" class="img-fluid rounded-circle">
+            <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" hidden>
         </div>
-
+        <div class="edit-img" (click)="fileInput.click()">
+            <i class="bi bi-plus"></i>
+        </div>
     </div>
-   
+
+
 </div>

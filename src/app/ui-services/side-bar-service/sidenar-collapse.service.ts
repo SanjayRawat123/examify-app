@@ -76,9 +76,9 @@ export class SidebarCollapseService {
       this.sidebar.classList.remove('hoverable');
       this.isExpandedSubject.next(false);
     } else {
-      this.sidebar.classList.remove('hoverable');
-      this.sidebar.classList.remove('close');
       this.sidebar.classList.add('locked');
+      this.sidebar.classList.remove('close');
+      this.sidebar.classList.remove('hoverable');
       this.sidebarLockBtn.classList.replace('bx-lock-open-alt', 'bx-lock-alt');
       this.isExpandedSubject.next(true);
     }
