@@ -1,5 +1,6 @@
 // theme.service.ts
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,8 @@ export class ThemeService {
   private readonly THEME_STORAGE_KEY = 'theme';
   private isDarkTheme = false;
   private renderer: Renderer2;
+  private themeChangeSubject = new Subject<boolean>();
+  themeChange$ = this.themeChangeSubject.asObservable();
 
   public get getDarkTheme(): boolean {
     return this.isDarkTheme;
@@ -24,6 +27,7 @@ export class ThemeService {
     this.isDarkTheme = !this.isDarkTheme;
     this.saveThemeToStorage();
     this.applyTheme();
+    this.themeChangeSubject.next(this.isDarkTheme);
     return this.isDarkTheme;
   }
 

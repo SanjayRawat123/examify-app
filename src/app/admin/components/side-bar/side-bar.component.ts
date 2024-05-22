@@ -8,6 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SidebarCollapseService } from 'src/app/ui-services/side-bar-service/sidenar-collapse.service';
+import { ThemeService } from 'src/app/ui-services/theme.service';
 import { CoreMenu } from 'src/types/core-menu';
 
 @Component({
@@ -17,11 +18,19 @@ import { CoreMenu } from 'src/types/core-menu';
   encapsulation: ViewEncapsulation.None,
 })
 export class SideBarComponent implements OnInit {
+    isDarkMode: boolean = false;
   constructor(
     private sidebarService: SidebarCollapseService,
-    private elementRef: ElementRef
-  ) {}
-  ngOnInit(): void {}
+    private elementRef: ElementRef,
+    public themeService: ThemeService
+  ) {
+    this.themeService.themeChange$.subscribe(isDarkTheme => {
+      this.isDarkMode =isDarkTheme;
+    });
+  }
+  ngOnInit(): void {
+    this.isDarkMode = this.themeService.getDarkTheme;
+  }
 
   ngAfterViewInit(): void {
     const sidebar = this.elementRef.nativeElement.querySelector('.sidebar');

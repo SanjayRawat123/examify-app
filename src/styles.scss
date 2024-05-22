@@ -60,7 +60,8 @@ html,
 }
 
 .card {
-    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, .1);
+    background: #fffefb;
+    box-shadow: none;
     transition: all .3s ease-in-out, background 0s, color 0s, border-color 0s;
     border: none;
 }

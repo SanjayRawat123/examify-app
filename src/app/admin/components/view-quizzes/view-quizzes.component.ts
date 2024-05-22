@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './view-quizzes.component.scss'
 })
 export class ViewQuizzesComponent {
-
+  hello() {
+    console.log("Click event triggered!");
+    alert("Content clicked!");
+  }
 }

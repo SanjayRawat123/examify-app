@@ -1,10 +1,11 @@
-<!-- sidebar.component.html -->
+<!-- sidebar.component.html log-back-e.svg -->
 <nav class="sidebar locked">
   <div class="logo_items flex">
     <span class="nav_image">
-      <img src="../../../../assets/images/log-back-e.svg" alt="logo_img" />
+      <img *ngIf="!isDarkMode" src="../../../../assets/images/log-back-e.svg" alt="logo_img" />
+      <img *ngIf="isDarkMode" src="../../../../assets/images/logo3-with-e.svg" alt="logo_img" />
     </span>
-    <span class="logo_name">Examify</span>
+    <span class="logo_name">Examify </span>
     <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
     <i class="bx bx-x" id="sidebar-close"></i>
   </div>

@@ -8,6 +8,7 @@
     padding: 15px 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
+    z-index: 1000;
 
     ol,
     ul {
@@ -117,7 +118,7 @@
 
 .link.active,
 .link:hover {
-    background-color: rgba(33, 96, 147, .2);
+    background-color: rgba(105, 180, 255, .2);
     color: #005CBB;
     font-weight: 600;
 }
@@ -177,8 +178,9 @@
 ///drak leyout
 .dark-theme {
     .sidebar {
-        background: rgb(21, 20, 26, 1);
-        box-shadow: 0 0 2px #c5c5c6;
+        background: #1E1E1E;
+        box-shadow: none;
+        border-right: 1px solid #5c5c56;
     }
 
     .logo_name {
