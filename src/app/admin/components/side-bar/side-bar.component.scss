@@ -4,11 +4,12 @@
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #fff;
+    // background-color: #fff;
     padding: 15px 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
-    z-index: 1000;
+    z-index: 100;
+    padding-top: 80px;
 
     ol,
     ul {
@@ -21,19 +22,24 @@
 }
 
 .logo_items {
-    // gap: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    .nav_image {
+        visibility: hidden;
+    }
+
+    .logo_name {
+        visibility: hidden;
+        font-size: 22px;
+        color: #333;
+        font-weight: 500px;
+        transition: all 0.5s ease;
+    }
 }
 
-.logo_name {
-    font-size: 22px;
-    color: #333;
-    font-weight: 500px;
-    transition: all 0.5s ease;
-}
+
 
 .sidebar.close .logo_name,
 .sidebar.close #lock-icon,
@@ -61,7 +67,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 0px;
     overflow-y: auto;
     height: calc(100% - 82px);
 }
@@ -159,6 +165,7 @@
     .sidebar {
         left: 0;
         z-index: 1000;
+        padding-top: 10px;
     }
 
     .sidebar.close {
@@ -172,8 +179,19 @@
     #lock-icon {
         display: none;
     }
-}
 
+    .logo_items {
+
+
+        .nav_image {
+            visibility: visible;
+        }
+
+        .logo_name {
+            visibility: visible;
+        }
+    }
+}
 
 ///drak leyout
 .dark-theme {
@@ -194,8 +212,8 @@
 
     .link.active,
     .link:hover {
-        background-color: #5421bb80;
-        color: #fff;
+        background-color: rgba(73, 95, 163,0.3);
+        color: #4070f4;
         font-weight: 600;
     }
 

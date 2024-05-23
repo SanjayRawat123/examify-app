@@ -1,28 +1,28 @@
 .fixed-navbar {
     position: fixed;
     top: 0;
-    left: 55px;
-    width: calc(100% - 55px);
+    left: 0px;
+    width: 100%;
     // background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px #aaa;
     padding-top: 0;
     padding-bottom: 0;
-    z-index: 500;
+    z-index: 900;
 
-    &.sidebar-expanded {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
+    // &.sidebar-expanded {
+    //     left: 250px;
+    //     width: calc(100% - 250px);
+    // }
 
-    &.sidebar-collapsed {
-        left: 55px;
-        width: calc(100% - 55px);
-    }
+    // &.sidebar-collapsed {
+    //     left: 55px;
+    //     width: calc(100% - 55px);
+    // }
 
-    @media (max-width: 1024px) {
-        left: 0 !important;
-        width: 100% !important;
-    }
+    // @media (max-width: 1024px) {
+    //     left: 0 !important;
+    //     width: 100% !important;
+    // }
 
 }
 
@@ -108,6 +108,18 @@
 
 }
 
+.logo_name {
+    font-size: 22px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    .logo_part1 {
+        color: rgba(73, 95, 163,1);
+    }
+    .logo_part2 {
+        color: blue;
+    }
+
+}
 
 .user-item {
 
