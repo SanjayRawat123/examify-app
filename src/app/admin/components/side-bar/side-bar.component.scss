@@ -118,7 +118,7 @@
 
 .link.active,
 .link:hover {
-    background-color: rgba(105, 180, 255, .2);
+    background-color: #712cf91a;
     color: #005CBB;
     font-weight: 600;
 }
@@ -178,24 +178,24 @@
 ///drak leyout
 .dark-theme {
     .sidebar {
-        background-color: #1E1E1E !important;
+        background-color: #212529 !important;
         box-shadow: none;
         border-right: 1px solid #5c5c56;
     }
 
     .logo_name {
-        color: #FFF
+        color: #dee2e6
     }
 
     .menu_item,
     .link {
-        color: #fff;
+        color: #dee2e6;
     }
 
     .link.active,
     .link:hover {
-        background-color: rgba(33, 96, 147, .2);
-        color: #005CBB;
+        background-color: #5421bb80;
+        color: #fff;
         font-weight: 600;
     }
 
