@@ -112,9 +112,11 @@
     font-size: 22px;
     font-weight: 600;
     transition: all 0.5s ease;
+
     .logo_part1 {
-        color: rgba(73, 95, 163,1);
+        color: rgba(73, 95, 163, 1);
     }
+
     .logo_part2 {
         color: blue;
     }
@@ -142,7 +144,7 @@
 
 
 ///drak mode
-.dark-theme {
+.dark {
     .nav-link {
         color: #fff
     }

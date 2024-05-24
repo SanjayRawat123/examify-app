@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UserService } from 'src/app/backend-services/user-service/user.service';
 import { Data } from 'src/types/examify-interface';
 
@@ -8,6 +8,7 @@ import { Data } from 'src/types/examify-interface';
   imports: [],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
+  encapsulation:ViewEncapsulation.None
 })
 export class ProfileComponent implements OnInit {
   profileImageSrc: string = '/assets/user-profile/user-09.jpg'; // Default profile image path
@@ -33,4 +34,6 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
+  
 }

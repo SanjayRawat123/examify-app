@@ -7,7 +7,7 @@
     // background-color: #fff;
     padding: 15px 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     z-index: 100;
     padding-top: 80px;
 
@@ -194,7 +194,7 @@
 }
 
 ///drak leyout
-.dark-theme {
+.dark {
     .sidebar {
         background-color: #212529 !important;
         box-shadow: none;
@@ -212,7 +212,7 @@
 
     .link.active,
     .link:hover {
-        background-color: rgba(73, 95, 163,0.3);
+        background-color: rgba(73, 95, 163, 0.3);
         color: #4070f4;
         font-weight: 600;
     }

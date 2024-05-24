@@ -1,0 +1,19 @@
+.btn-success {
+    border-color: #28c76f !important;
+    background-color: #28c76f !important;
+    color: #fff !important;
+}
+
+.btn-success:hover {
+    box-shadow: 0 1px 20px 1px rgb(140, 232, 182, 0.6);
+}
+
+.btn-success:active:focus {
+    background-color: rgb(40, 199, 111, 0.8) !important;
+}
+
+.btn-success:active::after {
+    transform: scale(2.5);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.8s;
+}

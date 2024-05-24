@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ThemeService {
-  private readonly DARK_THEME_CLASS = 'dark-theme';
+  private readonly DARK_THEME_CLASS = 'dark';
   private readonly THEME_STORAGE_KEY = 'theme';
   private isDarkTheme = false;
   private renderer: Renderer2;
