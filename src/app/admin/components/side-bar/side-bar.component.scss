@@ -4,9 +4,8 @@
     left: 0;
     height: 100%;
     width: 250px;
-    // background-color: #fff;
     padding: 15px 5px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     z-index: 100;
     padding-top: 80px;
@@ -33,9 +32,17 @@
     .logo_name {
         visibility: hidden;
         font-size: 22px;
-        color: #333;
-        font-weight: 500px;
+        font-weight: 600;
         transition: all 0.5s ease;
+
+        .logo_part1 {
+            color: rgba(73, 95, 163, 1);
+        }
+
+        .logo_part2 {
+            color: blue;
+        }
+
     }
 }
 
@@ -60,7 +67,6 @@
 
 #sidebar-close {
     display: none;
-    color: #333;
 }
 
 .menu_container {

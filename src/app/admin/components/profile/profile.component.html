@@ -1,21 +1,28 @@
 <div class=" card profile-card">
     <div class="profile-background ">
         <img src="/assets/user-profile/pexels-pixabay-268533.jpg" class="card-img-top" alt="Background Image">
-    </div>
-    <div class="card-body">
-        <div class="profile-content">
-            <div class="profile-picture">
-                <img [src]="profileImageSrc" alt="Profile Picture" class="img-fluid rounded-circle">
-                <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" hidden>
+        <div class="card-img-overlay img-overlay-content">
+            <div class="overly-item">
+                <div>
+                    <div class="profile-picture">
+                        <img [src]="profileImageSrc" alt="Profile Picture" class="img-fluid rounded-circle">
+                        <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" hidden>
+                    </div>
+                    <div class="edit-img" (click)="fileInput.click()">
+                        <i class="bi bi-plus"></i>
+                    </div>
+                </div>
+                <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
             </div>
-            <div class="edit-img" (click)="fileInput.click()">
-                <i class="bi bi-plus"></i>
-            </div>
+        </div>
+        <div class="card-body">
+
             <div class="row m-0">
                 <div class="col-12 flex justify-content-end">
                     <button type="button" class="btn btn-success ">Edit profile</button>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -23,13 +30,15 @@
     <div class="card-body">
         <h5 class="card-title">Personal info</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item personal-info">
+            <li class="list-group-item">
                 <div class="icon-box">
                     <i class='bx bx-envelope'></i>
                 </div>
+                <div class="info-text">
+                    <p class="info-value">{{user?.email}}</p>
+                    <p class="info-label">Email</p>
+                </div>
             </li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
         </ul>
     </div>
 </div>

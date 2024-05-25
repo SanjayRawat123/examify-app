@@ -16,6 +16,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+p{
+    color:#3a3a3a;
+}
 .flex {
     display: flex;
     align-items: center;
@@ -35,28 +38,20 @@ body {
 $purple: #7367f0;
 $primary: $purple ;
 
-html,
-// body {
-//     height: 100%;
-//     margin: 0;
-//     font-family: "DM Sans";
-//     background: rgb(244, 244, 252);
-
-// }
 
 .round {
     border-radius: 1.5rem;
 }
 
 
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    padding: .786rem 1.5rem;
-    font-size: 1rem;
-    line-height: 1;
-}
+// .btn {
+//     display: inline-block;
+//     font-weight: 400;
+//     text-align: center;
+//     padding: .786rem 1.5rem;
+//     font-size: 1rem;
+//     line-height: 1;
+// }
 
 .card {
     background: #fffefb;
