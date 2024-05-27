@@ -22,6 +22,9 @@
                                         *ngIf="userName?.touched && userName?.errors?.['required']">
                                         User Name is required
                                     </span>
+                                    <span class="text-danger" *ngIf="userName?.errors?.['usernameTaken']">
+                                        User Name is already taken
+                                    </span>
                                 </div>
 
                                 <div class="form-group form-group-margin">

@@ -12,22 +12,26 @@
                         <i class="bi bi-plus"></i>
                     </div>
                 </div>
-                <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
             </div>
         </div>
         <div class="card-body">
 
             <div class="row m-0">
-                <div class="col-12 flex justify-content-end">
-                    <button type="button" class="btn btn-success ">Edit profile</button>
+                <div class="col-md-6  d-flex align-items-center" style="padding-left: 7rem;">
+                    <h5 class="card-title mt-0">{{user.firstName}} {{user.lastName}}</h5>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                    <button type="button" class="btn btn-outline-success ">
+                        <span>Edit</span>
+                    </button>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<div class="card ">
-    <div class="card-body">
+<div class="card mb-2">
+    <div class="card-body pb-0">
         <h5 class="card-title">Personal info</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -35,8 +39,70 @@
                     <i class='bx bx-envelope'></i>
                 </div>
                 <div class="info-text">
-                    <p class="info-value">{{user?.email}}</p>
+                    <p class="info-value">{{user.email}}</p>
                     <p class="info-label">Email</p>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class='bx bx-mobile-alt'></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">{{user.phone}}</p>
+                    <p class="info-label">Phone Number</p>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">{{user.username}}</p>
+                    <p class="info-label">User Name</p>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class="bi bi-translate"></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">English</p>
+                    <p class="info-label">Languages</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="card mb-2">
+    <div class="card-body pb-0">
+        <h5 class="card-title">Professional Information</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">{{user.authorities[0].authority}}</p>
+                    <p class="info-label">Role</p>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class='bx bx-mobile-alt'></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">20141224</p>
+                    <p class="info-label">Employee ID</p>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="icon-box">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="info-text">
+                    <p class="info-value">S. V. Institution</p>
+                    <p class="info-label">Institution Name</p>
                 </div>
             </li>
         </ul>

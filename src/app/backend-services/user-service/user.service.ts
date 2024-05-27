@@ -32,7 +32,7 @@ export class UserService {
   }
 
   //get current logged in user by this funtion
-  public getCurrenUser():Observable<any> {
+  public getCurrenUser(): Observable<any> {
     return this.http.get(`${this.apiUrl}/current-user`).pipe();
   }
 
@@ -79,5 +79,9 @@ export class UserService {
     return true;
   }
 
-  
+  checkUsername(username: string): Observable<boolean> {
+    return this.http.get<boolean>(
+      `${this.apiUrl}check-username?username=${username}`
+    );
+  }
 }

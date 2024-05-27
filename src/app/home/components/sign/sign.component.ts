@@ -8,6 +8,8 @@ import {
 import { matchPasswords } from './validators/match-passwords.validator';
 import { UserService } from 'src/app/backend-services/user-service/user.service';
 import { Data } from 'src/types/examify-interface';
+import { HttpResponse } from '@angular/common/http';
+import { UsernameValidator } from './validators/Username-vlidator';
 
 @Component({
   selector: 'app-sign',
@@ -17,12 +19,20 @@ import { Data } from 'src/types/examify-interface';
 export class SignComponent implements OnInit {
   userSignupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private usernameValidator: UsernameValidator
+  ) {}
 
   ngOnInit(): void {
     this.userSignupForm = this.fb.group(
       {
-        userName: ['', Validators.required],
+        userName: [
+          '',
+          Validators.required,
+          [this.usernameValidator.validate.bind(this.usernameValidator)],
+        ],
         firstName: ['', Validators.required],
         lastName: [''],
         email: ['', [Validators.required, Validators.email]],
@@ -70,11 +80,19 @@ export class SignComponent implements OnInit {
       profile: 'default.png',
     };
     this.userService.createUser(user).subscribe(
-      (data: Data.UserSigUp) => {
-        console.log(data);
+      (response: HttpResponse<any>) => {
+        if (response.status === 201) {
+          console.log('User created successfully', response.body);
+        } else {
+          console.log('Unexpected status code', response.status);
+        }
       },
-      (erorr) => {
-        console.log(erorr);
+      (error) => {
+        if (error.status === 409) {
+          console.log('User already exists', error.error, error);
+        } else {
+          console.log('An error occurred', error);
+        }
       }
     );
   }
