@@ -76,7 +76,7 @@ export class UserLoginComponent {
     const user: Data.User = this.userService.getUser();
     const userRole = this.userService.userRole();
     this.snack.open(
-      `You have successfully logged in as an user ${userRole} user to Examify.
+      `You have successfully logged in as an  ${userRole} user to Examify.
        Now you can start to explore. Enjoy! 🎉 .
        👋 Welcome,' ${user.firstName} ${user.lastName} + '!'`,
       '',
