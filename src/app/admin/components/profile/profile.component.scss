@@ -130,27 +130,3 @@
     }
 }
 
-.btn-outline-success {
-    border-color: #28c76f !important;
-    color: #28c76f !important;
-
-    span {
-        cursor: pointer !important;
-    }
-
-    &:hover {
-        background-color: rgba(40, 199, 111, 0.2);
-        color: #28c76f
-    }
-
-    &:active:focus {
-        background-color: rgba(40, 199, 111, 0.3);
-        color: #28c76f
-    }
-
-    &:active::after {
-        transform: scale(2.5);
-        opacity: 0;
-        transition: transform 0.5s ease, opacity 0.8s;
-    }
-}
