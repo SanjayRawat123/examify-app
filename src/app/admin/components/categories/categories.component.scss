@@ -5,15 +5,29 @@
 
     }
 
-    .icon{
-        width: 44px;
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
         height: 44px;
-        background-color: #E9ECEF;
+        background-color: #82868b33;
+        border-radius: 8px;
+        & svg{
+            width: 35px;
+            height: 35px;
+        }
+        .secondary-color {
+            fill: green; /* Change to your desired color */
+          }
+          .primary-color {
+            fill: blue; /* Change to your desired color */
+          }
     }
 
-    .list-group-item{
+    .list-group-item {
         display: flex;
-        align-items:flex-start;
+        align-items: flex-start;
         gap: 9px;
     }
 }
@@ -27,5 +41,15 @@
 }
 
 .btn-primary {
-    background-color: rgb(64, 112, 244) ;
+    background-color: rgb(64, 112, 244);
+}
+
+.card-img-top-right {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 100px;
+    /* Adjust width as needed */
+    height: auto;
+    border-radius: 50%;
 }
