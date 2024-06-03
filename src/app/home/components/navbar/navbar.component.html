@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" >
             <img src="../../../../assets/logo-2.png" class="img-fluid" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -16,8 +16,8 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" (click)="toggleTheme()">
                 <a class="nav-link">
-                    <i *ngIf="!isDarkMode" data-feather="moon" style="color: #6e6b7b;"></i>
-                    <i *ngIf="isDarkMode" data-feather="sun" style="color: #fff;"></i>
+                    <i *ngIf="!isDarkMode" class="bx bx-moon" id="DarkMode"></i>
+                    <i *ngIf="isDarkMode" class="bx bx-sun" id="light-mode"></i>
                 </a>
             </li>
             <li *ngIf="!isLoggedIn" class="nav-item" [class.active]="isActive('/home/user/login')">

@@ -5,7 +5,9 @@ import { environment } from 'src/environments/environment.development';
 import { Observable, map } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UserService {
   private apiUrl = environment.apiUrl;
 

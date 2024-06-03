@@ -9,7 +9,7 @@ import { matchPasswords } from './validators/match-passwords.validator';
 import { UserService } from 'src/app/backend-services/user-service/user.service';
 import { Data } from 'src/types/examify-interface';
 import { HttpResponse } from '@angular/common/http';
-import { UsernameValidator } from './validators/Username-vlidator';
+import { UsernameValidator } from './validators/username-vlidator';
 
 @Component({
   selector: 'app-sign',

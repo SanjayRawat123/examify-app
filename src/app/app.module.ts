@@ -8,8 +8,6 @@ import { HomeModule } from './home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ThemeService } from './ui-services/theme.service';
-import { CoreDirectivesModule } from 'src/@Core-scss/directives/directives';
-import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { authInterceptorProviders } from './ui-services/auth.interceptor';
 @NgModule({
@@ -19,8 +17,8 @@ import { authInterceptorProviders } from './ui-services/auth.interceptor';
     AppRoutingModule,
     NgbModule,
     HomeModule,
-    CoreDirectivesModule,
     MatSnackBarModule,
+    
   ],
   providers: [provideAnimationsAsync(), ThemeService,authInterceptorProviders],
   bootstrap: [AppComponent],
