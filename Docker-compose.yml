@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  capture-server-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: examify-app:latest
+    container_name: examify-app-container
+    ports:
+      - "80:80"
+
+
+  
+  # Add more services as needed
