@@ -13,16 +13,21 @@
         height: 44px;
         background-color: #82868b33;
         border-radius: 8px;
-        & svg{
+
+        & svg {
             width: 35px;
             height: 35px;
         }
+
         .secondary-color {
-            fill: green; /* Change to your desired color */
-          }
-          .primary-color {
-            fill: blue; /* Change to your desired color */
-          }
+            fill: green;
+            /* Change to your desired color */
+        }
+
+        .primary-color {
+            fill: blue;
+            /* Change to your desired color */
+        }
     }
 
     .list-group-item {
@@ -52,4 +57,28 @@
     /* Adjust width as needed */
     height: auto;
     border-radius: 50%;
+}
+
+// .btn .icon-btn{
+//     padding: .715rem .736rem;
+//     background-color: red;
+// }
+
+
+.btn-flat {
+    background-color: transparent;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn-flat-blue {
+    color: rgb(220, 52, 53);
+}
+
+.btn-flat-blue:hover {
+    background-color: rgba(220, 52, 53, .2);
 }
