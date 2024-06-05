@@ -65,20 +65,20 @@
 // }
 
 
-.btn-flat {
-    background-color: transparent;
-    color: #333;
-    padding: 4px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: none;
-}
+.btn-flat-secondary {
+    color: #707070;
 
-.btn-flat-blue {
-    color: rgb(220, 52, 53);
-}
+    &:hover {
+        background-color: rgba(130, 134, 139, 0.2);
+    }
 
-.btn-flat-blue:hover {
-    background-color: rgba(220, 52, 53, .2);
+    &:active:focus {
+        background-color: rgba(130, 134, 139, .3);
+    }
+
+    &:active::after {
+        transform: scale(2.5);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.8s;
+    }
 }
