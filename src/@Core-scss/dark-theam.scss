@@ -63,8 +63,12 @@
         -webkit-text-fill-color: #b4b7bd !important;
     }
 
-    //////////////pop model scss
 
+
+    //////////////pop model scss
+    .modal-header {
+        border-bottom: 1px solid #495057;
+    }
     .modal-content {
         background-color: #292b2c;
         color: white;
@@ -73,6 +77,10 @@
     .close {
         color: white;
     }
+
+////////pop model scss</>
+
+
 
     .light-blue-backdrop {
         background-color: 0 4px 24px 0 #5cb3fd;

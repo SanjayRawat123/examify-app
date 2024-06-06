@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddCategoryComponent } from '../add-category/add-category.component';
 
 @Component({
   selector: 'app-categories',
@@ -6,8 +8,15 @@ import { Component, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
-  encapsulation :ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class CategoriesComponent {
+export class CategoriesComponent implements OnInit {
+  constructor(private modalService: NgbModal) {}
 
+  ngOnInit(): void {}
+
+  openAddCategoryMdl(cId?: number) {
+    const modalRef = this.modalService.open(AddCategoryComponent);
+     modalRef.componentInstance.cId = cId;
+  }
 }

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2  d-flex justify-content-between">
             <h3 class="page-heading">Categories</h3>
-            <button type="button" class="btn btn-primary btn-sm">Add Category</button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="openAddCategoryMdl()">Add Category</button>
         </div>
     </div>
 
@@ -31,7 +31,8 @@
             </p>
             <div class="w-100 d-inline-flex gap-1 justify-content-end">
 
-                <button type="button" class="btn-flat btn-flat-danger active" data-bs-toggle="button" aria-pressed="true">
+                <button type="button" class="btn-flat btn-flat-danger active" data-bs-toggle="button"
+                    aria-pressed="true">
                     <i class='bx bx-trash'></i>
                 </button>
                 <button type="button" class="btn-flat btn-flat-secondary">

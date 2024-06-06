@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
       },
       {
         path: 'categories',
-        component: CategoriesComponent,
+        component: CategoriesComponent
       },
       {
         path: 'quizzes',

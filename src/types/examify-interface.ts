@@ -38,4 +38,10 @@ export namespace Data {
   export interface Authority {
     authority: string;
   }
+
+  export interface Category {
+    id?:number;
+    title:string;
+    description:string;
+  }
 }
