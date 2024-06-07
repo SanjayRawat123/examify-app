@@ -68,7 +68,13 @@
     //////////////pop model scss
     .modal-header {
         border-bottom: 1px solid #495057;
+
     }
+
+    .modal-header .btn-close {
+        color: #fff;
+    }
+
     .modal-content {
         background-color: #292b2c;
         color: white;
@@ -78,7 +84,11 @@
         color: white;
     }
 
-////////pop model scss</>
+    .modal-footer {
+        border-top: 1px solid #495057;
+    }
+
+    ////////pop model scss</>
 
 
 

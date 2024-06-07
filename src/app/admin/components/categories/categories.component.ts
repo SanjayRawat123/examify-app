@@ -16,7 +16,9 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {}
 
   openAddCategoryMdl(cId?: number) {
-    const modalRef = this.modalService.open(AddCategoryComponent);
-     modalRef.componentInstance.cId = cId;
+    const modalRef = this.modalService.open(AddCategoryComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.cId = cId;
   }
 }

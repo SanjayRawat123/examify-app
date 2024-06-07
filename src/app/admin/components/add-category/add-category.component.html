@@ -1,17 +1,19 @@
-<div class="modal-header">
-    <h4 class="modal-title">Add Category</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+<div class="modal-header flex justify-content-between">
+  <h4 class="modal-title">Add Category</h4>
+  <h4 class="mb-0 close-icon" (click)="activeModal.dismiss('Cross click')">
+    <i class="bx bx-x"></i>
+  </h4>
 </div>
 <div class="modal-body">
-    <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="title">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" placeholder="title" [(ngModel)]="category.title" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" rows="3" [(ngModel)]="category.description" name="description"></textarea>
+  </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="onSave()" >Close</button>
 </div>
