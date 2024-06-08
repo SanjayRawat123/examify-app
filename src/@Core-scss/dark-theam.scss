@@ -42,9 +42,9 @@
     }
 
     .form-control {
-        background-color: #212529 !important;
+        background-color: transparent !important;
         border: 1px solid #495057;
-        color: #dee2e6 !important;
+        color: #D0D2D6!important;
     }
 
     .input {
@@ -53,14 +53,14 @@
 
 
     label.form-label {
-        color: #dee2e6 !important;
+        color: #D0D2D6 !important;
     }
 
     input:-webkit-autofill,
     textarea:-webkit-autofill,
     select:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 1000px #232323 inset !important;
-        -webkit-text-fill-color: #b4b7bd !important;
+        -webkit-text-fill-color: #D0D2D6 !important;
     }
 
 

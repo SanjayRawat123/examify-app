@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedNavbarComponent } from '../shared-modules/shared-navbar/shared-navbar.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     SharedNavbarComponent,
     AddCategoryComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Data } from 'src/types/examify-interface';
-import { Category } from './model/category';
+import { CategoryTampalte } from './tamplate/category-tmp';
+import { CategoryService } from 'src/app/backend-services/category/category.service';
 
 @Component({
   selector: 'app-add-category',
@@ -11,23 +12,20 @@ import { Category } from './model/category';
 })
 export class AddCategoryComponent implements OnInit {
   @Input() cId!: number;
-  category!: Category;
+  category!: CategoryTampalte;
 
-  constructor(public activeModal: NgbActiveModal) {
-    this.category = new Category(this.cId, '', '');
+  constructor(
+    public activeModal: NgbActiveModal,
+    private categoryService: CategoryService
+  ) {
+    this.category = new CategoryTampalte();
   }
 
   ngOnInit(): void {}
 
   onSave(): void {
-    console.log('Category created:', this.JsonToSave());
-  }
-
-  JsonToSave(): Data.Category {
-    return {
-      id: this.category.id,
-      title: this.category.title,
-      description: this.category.description,
-    };
+    this.categoryService.createCategory(this.category).subscribe((data) => {
+      console.log('data retrun by service', data);
+    });
   }
 }

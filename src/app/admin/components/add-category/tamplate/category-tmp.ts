@@ -1,16 +1,15 @@
 import { Data } from 'src/types/examify-interface';
 
-export class Category implements Data.Category {
-  private _id: number;
-  private _title: string;
-  private _description: string;
+export class CategoryTampalte {
+  private _id!: number;
+  private _title!: string;
+  private _description!: string;
 
-    
-  constructor(id: number, title: string, description: string) {
-    this._id = id;
-    this._title = title;
-    this._description = description;
-  }
+  // constructor(id: number, title: string, description: string) {
+  //   this._id = id;
+  //   this._title = title;
+  //   this._description = description;
+  // }
 
   public get id(): number {
     return this._id;

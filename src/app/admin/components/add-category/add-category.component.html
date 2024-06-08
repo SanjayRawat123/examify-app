@@ -11,9 +11,10 @@
   </div>
   <div class="mb-3">
     <label for="description" class="form-label">Description</label>
-    <textarea class="form-control" id="description" rows="3" [(ngModel)]="category.description" name="description"></textarea>
+    <textarea class="form-control" id="description" rows="3" [(ngModel)]="category.description"
+      name="description"></textarea>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-secondary" (click)="onSave()" >Close</button>
+  <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
 </div>

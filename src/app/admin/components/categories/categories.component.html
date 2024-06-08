@@ -6,10 +6,10 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card mb-2" *ngFor="let category of categories">
         <div class="card-body">
             <div class="d-flex align-items-center mb-1">
-                <h5 class="card-title mb-0">Shiba Inu Lorem ipsum, dolor sit amet consectetur adipisicing </h5>
+                <h5 class="card-title mb-0">{{ category.title }}</h5>
                 <div class="icon ms-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="category">
                         <path fill="none" d="M0 0h24v24H0V0z"></path>
@@ -24,10 +24,7 @@
                 </div>
             </div>
 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo vero mollitia! Quae eligendi
-                quod,
-                facilis voluptatum, delectus recusandae accusamus fugit similique quaerat perspiciatis minus quam.
-                Repellendus, dolore eaque! Nobis?
+            <p>{{category.description}}
             </p>
             <div class="w-100 d-inline-flex gap-1 justify-content-end">
 
