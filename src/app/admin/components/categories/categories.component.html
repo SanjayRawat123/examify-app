@@ -1,12 +1,16 @@
 <div class="container-fluid category-wrapper ">
     <div class="row">
         <div class="col-12 mb-2  d-flex justify-content-between">
-            <h3 class="page-heading">Categories</h3>
+            <div class="flex">
+                <h4 class="page-heading">Categories</h4>
+                <input class="form-control ms-2" type="search" [(ngModel)]="searchTerm" (input)="filterCategories()"
+                    placeholder="Search" aria-label="Search">
+            </div>
             <button type="button" class="btn btn-primary btn-sm" (click)="openAddCategoryMdl()">Add Category</button>
         </div>
     </div>
 
-    <div class="card mb-2" *ngFor="let category of categories">
+    <div class="card mb-2" *ngFor="let category of paginatedCategories">
         <div class="card-body">
             <div class="d-flex align-items-center mb-1">
                 <h5 class="card-title mb-0">{{ category.title }}</h5>

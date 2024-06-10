@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -16,6 +16,7 @@ import { Data } from 'src/types/examify-interface';
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.scss',
+  encapsulation:ViewEncapsulation.None
 })
 export class UserLoginComponent {
   userLoginForm!: FormGroup;
