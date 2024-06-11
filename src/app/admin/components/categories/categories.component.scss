@@ -1,8 +1,16 @@
 .category-wrapper {
-
+    .card{
+        box-shadow: none !important;
+    }
     .page-heading {
         color: #333;
 
+    }
+
+    .search-icon{
+        cursor:pointer;
+        font-size: 25px;
+        margin-left: 14px;
     }
 
     .icon {
@@ -59,26 +67,4 @@
     border-radius: 50%;
 }
 
-// .btn .icon-btn{
-//     padding: .715rem .736rem;
-//     background-color: red;
-// }
 
-
-.btn-flat-secondary {
-    color: #707070;
-
-    &:hover {
-        background-color: rgba(130, 134, 139, 0.2);
-    }
-
-    &:active:focus {
-        background-color: rgba(130, 134, 139, .3);
-    }
-
-    &:active::after {
-        transform: scale(2.5);
-        opacity: 0;
-        transition: transform 0.5s ease, opacity 0.8s;
-    }
-}

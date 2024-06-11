@@ -2,16 +2,17 @@
     <div class="row">
         <div class="col-12 mb-2  d-flex justify-content-between">
             <div class="flex">
-                <h4 class="page-heading">Categories</h4>
-                <input class="form-control ms-2" type="search" [(ngModel)]="searchTerm" (input)="filterCategories()"
-                    placeholder="Search" aria-label="Search">
+                <h4 *ngIf="!showSearchInput" class="page-heading">Categories</h4>
+                <input *ngIf="showSearchInput" class="form-control " type="search" [(ngModel)]="searchTerm"
+                    (input)="filterCategories()" placeholder="Search" aria-label="Search">
+                <i class='bx bx-search search-icon' (click)="onclickSearchIcon()"></i>
             </div>
             <button type="button" class="btn btn-primary btn-sm" (click)="openAddCategoryMdl()">Add Category</button>
         </div>
     </div>
 
     <div class="card mb-2" *ngFor="let category of paginatedCategories">
-        <div class="card-body">
+        <div class="card-body pb-0">
             <div class="d-flex align-items-center mb-1">
                 <h5 class="card-title mb-0">{{ category.title }}</h5>
                 <div class="icon ms-auto">
@@ -42,6 +43,27 @@
             </div>
 
 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 flex justify-content-end">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 

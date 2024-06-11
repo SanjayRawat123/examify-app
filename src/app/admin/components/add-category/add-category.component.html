@@ -5,16 +5,24 @@
   </h4>
 </div>
 <div class="modal-body">
-  <div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" placeholder="title" [(ngModel)]="category.title" name="title">
-  </div>
-  <div class="mb-3">
-    <label for="description" class="form-label">Description</label>
-    <textarea class="form-control" id="description" rows="3" [(ngModel)]="category.description"
-      name="description"></textarea>
-  </div>
+  <form #ngForm="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" placeholder="title" [(ngModel)]="category.title" name="title"
+        #ngmtitle="ngModel" required>
+      <app-validational-alert controlName="Title" [control]="ngmtitle"></app-validational-alert>
+
+    </div>
+
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" rows="3" [(ngModel)]="category.description"
+        #ngmdescription="ngModel" required="" name="description"></textarea>
+      <app-validational-alert controlName="Description" [control]="ngmdescription"></app-validational-alert>
+    </div>
+  </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+  <button type="button" class="btn btn-primary" [disabled]="ngForm.invalid" (click)="onSave()">Save</button>
 </div>

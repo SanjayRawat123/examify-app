@@ -9,6 +9,7 @@ import { SharedNavbarComponent } from '../shared-modules/shared-navbar/shared-na
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { ValidationalAlertComponent } from '../shared-modules/validationa-alert/validationa-alert.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
     SharedNavbarComponent,
     AddCategoryComponent,
     CategoriesComponent,
+    ValidationalAlertComponent
   ],
   imports: [
     CommonModule,

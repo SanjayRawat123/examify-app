@@ -1,0 +1,6 @@
+<div *ngIf="control.invalid && control.touched">
+    <!-- <strong>{{ controlName }}:</strong> -->
+    <div class="text-danger" *ngIf="control.errors?.['required']">{{ controlName }} Field is required</div>
+    <div class="text-danger" *ngIf="control.errors?.['pattern']">Invalid format</div>
+    <!-- Add more validation messages as needed -->
+</div>

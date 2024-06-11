@@ -19,6 +19,9 @@ export class CategoriesComponent implements OnInit {
   pageSize: number = 5;
   startDate: string = '';
   endDate: string = '';
+
+  showSearchInput: boolean = false;
+
   constructor(
     private modalService: NgbModal,
     private categoryService: CategoryService
@@ -51,8 +54,16 @@ export class CategoriesComponent implements OnInit {
       this.loadCategories();
     });
   }
+   
+  onclickSearchIcon(){
+    this.showSearchInput =true;
+  }
 
   filterCategories(): void {
+    console.log("console.log",this.searchTerm)
+    if(this.searchTerm == ''){
+      this.showSearchInput =false;
+    }
     this.filteredCategories = this.categories.filter(
       (category) =>
         category.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
