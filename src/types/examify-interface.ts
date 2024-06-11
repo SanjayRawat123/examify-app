@@ -40,7 +40,7 @@ export namespace Data {
   }
 
   export interface Category {
-    id?:number;
+    cId?:number;
     title:string;
     description:string;
   }

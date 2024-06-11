@@ -29,17 +29,29 @@ export class AddCategoryComponent implements OnInit {
     this.category = new CategoryTampalte();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.cId);
+    this.editCategoryById();
+  }
+
+  editCategoryById() {
+    this.categoryService.getCategoryById(this.cId).subscribe((data) => {
+      console.log(data);
+      this.category.description = data.description;
+      this.category.title = data.title;
+    });
+  }
 
   onSave(): void {
-    this.categoryService
-      .createCategory(this.category)
-      .subscribe((data: any) => {
-        console.log('data retrun by service', data);
-        if (data.status === 'success') {
-          this.onSaved.emit(true);
-          this.activeModal.dismiss();
-        }
-      });
+    console.log(this.category);
+    // this.categoryService
+    //   .createCategory(this.category)
+    //   .subscribe((data: any) => {
+    //     console.log('data retrun by service', data);
+    //     if (data.status === 'success') {
+    //       this.onSaved.emit(true);
+    //       this.activeModal.dismiss();
+    //     }
+    //   });
   }
 }

@@ -18,6 +18,11 @@ export class CategoryService {
     return this.http.get(url);
   }
 
+  readOne(type: string, id: number): Observable<any> {
+    const url = `${this.apiUrl}/${type}/${id}`;
+    return this.http.get(url);
+  }
+
   create(type: string, data: any): Observable<any> {
     const url = `${this.apiUrl}/${type}`;
     return this.http.post(url, data);
@@ -30,7 +35,7 @@ export class CategoryService {
 
   private transformCategoryTmp(category: CategoryTampalte): Data.Category {
     return {
-      id: category.id,
+      cId: category.id,
       title: category.title,
       description: category.description,
     };
@@ -38,6 +43,12 @@ export class CategoryService {
 
   getCategories(): Observable<Data.Category[]> {
     return this.readAll('category/').pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  getCategoryById(id: number) {
+    return this.readOne('category', id).pipe(
       map((response: any) => response.data)
     );
   }
