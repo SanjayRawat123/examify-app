@@ -28,9 +28,18 @@ export class CategoryService {
     return this.http.post(url, data);
   }
 
+  update(type: string, data: any): Observable<any> {
+    const url = `${this.apiUrl}/${type}`;
+    return this.http.put(url, data);
+  }
+
   createCategory(category: CategoryTampalte): Observable<Data.Category> {
     const categoryData: Data.Category = this.transformCategoryTmp(category);
-    return this.create('category/', categoryData);
+    if (category.id) {
+      return this.update('category/', categoryData);
+    } else {
+      return this.create('category/', categoryData);
+    }
   }
 
   private transformCategoryTmp(category: CategoryTampalte): Data.Category {

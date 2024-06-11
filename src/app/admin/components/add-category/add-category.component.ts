@@ -37,6 +37,7 @@ export class AddCategoryComponent implements OnInit {
   editCategoryById() {
     this.categoryService.getCategoryById(this.cId).subscribe((data) => {
       console.log(data);
+      this.category.id = data.cId;
       this.category.description = data.description;
       this.category.title = data.title;
     });
@@ -44,14 +45,14 @@ export class AddCategoryComponent implements OnInit {
 
   onSave(): void {
     console.log(this.category);
-    // this.categoryService
-    //   .createCategory(this.category)
-    //   .subscribe((data: any) => {
-    //     console.log('data retrun by service', data);
-    //     if (data.status === 'success') {
-    //       this.onSaved.emit(true);
-    //       this.activeModal.dismiss();
-    //     }
-    //   });
+    this.categoryService
+      .createCategory(this.category)
+      .subscribe((data: any) => {
+        console.log('data retrun by service', data);
+        if (data.status === 'success') {
+          this.onSaved.emit(true);
+          this.activeModal.dismiss();
+        }
+      });
   }
 }
