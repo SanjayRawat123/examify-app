@@ -49,16 +49,22 @@
         <div class="col-12 flex justify-content-end">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
+                    <li class="page-item" [class.disabled]="currentPage === 1">
+                        <a (click)="changePage(currentPage - 1)" class="page-link" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
+                    <li class="page-item" *ngIf="currentPage > 1">
+                        <a class="page-link" (click)="changePage(currentPage-1)">{{ currentPage - 1 }}</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" >{{ currentPage }}</a>
+                    </li>
+                    <li class="page-item" *ngIf="currentPage < totalPages()">
+                        <a class="page-link" (click)="changePage(currentPage + 1)">{{ currentPage + 1 }}</a>
+                    </li>
+                    <li class="page-item" [class.disabled]="currentPage === totalPages()">
+                        <a (click)="changePage(currentPage + 1)" class="page-link" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

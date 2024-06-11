@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   paginatedCategories: Data.Category[] = [];
   searchTerm: string = '';
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 10;
   startDate: string = '';
   endDate: string = '';
 
@@ -54,15 +54,15 @@ export class CategoriesComponent implements OnInit {
       this.loadCategories();
     });
   }
-   
-  onclickSearchIcon(){
-    this.showSearchInput =true;
+
+  onclickSearchIcon() {
+    this.showSearchInput = true;
   }
 
   filterCategories(): void {
-    console.log("console.log",this.searchTerm)
-    if(this.searchTerm == ''){
-      this.showSearchInput =false;
+    console.log('console.log', this.searchTerm);
+    if (this.searchTerm == '') {
+      this.showSearchInput = false;
     }
     this.filteredCategories = this.categories.filter(
       (category) =>
@@ -87,7 +87,17 @@ export class CategoriesComponent implements OnInit {
   //   });
   //   this.paginateCategories();
   // }
+  changePage(page: number): void {
+    if (page < 1 || page > this.totalPages()) {
+      return;
+    }
+    this.currentPage = page;
+    this.paginateCategories();
+  }
 
+  totalPages(): number {
+    return Math.ceil(this.filteredCategories.length / this.pageSize);
+  }
   paginateCategories(): void {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     this.paginatedCategories = this.filteredCategories.slice(
