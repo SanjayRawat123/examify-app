@@ -45,6 +45,12 @@ export class CategoriesComponent implements OnInit {
     );
   }
 
+  onDelete(id: number) {
+    this.categoryService.deleteCategoryById(id).subscribe((data) => {
+      console.log(data);
+      this.loadCategories();
+    });
+  }
   openAddCategoryMdl(cId?: number) {
     const modalRef = this.modalService.open(AddCategoryComponent, {
       centered: true,

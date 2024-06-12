@@ -33,6 +33,11 @@ export class CategoryService {
     return this.http.put(url, data);
   }
 
+  delete(type: string, id: number): Observable<any> {
+    const url = `${this.apiUrl}/${type}/${id}`;
+    return this.http.delete(url);
+  }
+
   createCategory(category: CategoryTampalte): Observable<Data.Category> {
     const categoryData: Data.Category = this.transformCategoryTmp(category);
     if (category.id) {
@@ -61,4 +66,9 @@ export class CategoryService {
       map((response: any) => response.data)
     );
   }
+
+  deleteCategoryById(id: number): Observable<any> {
+    return this.delete('category', id);
+  }
+  
 }

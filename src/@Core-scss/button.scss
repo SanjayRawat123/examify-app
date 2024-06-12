@@ -1,3 +1,23 @@
+.btn-primary {
+    background-color: #0d6efd;
+
+    &:hover {
+        box-shadow: 0 1px 20px 1px rgba(13, 110, 253, 0.6);
+    }
+
+    &:active:focus {
+        background-color: rgb(13, 110, 253, 0.8) !important;
+    }
+
+    &:active::after {
+        transform: scale(2.5);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.8s;
+    }
+}
+
+
+
 .btn-success {
     border-color: #28c76f !important;
     background-color: #28c76f !important;

@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-view-quizzes',
-  standalone: true,
-  imports: [],
   templateUrl: './view-quizzes.component.html',
-  styleUrl: './view-quizzes.component.scss'
+  styleUrl: './view-quizzes.component.scss',
+  encapsulation:ViewEncapsulation.None
 })
 export class ViewQuizzesComponent {
   hello() {

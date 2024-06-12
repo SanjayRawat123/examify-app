@@ -10,6 +10,7 @@ import { AddCategoryComponent } from './components/add-category/add-category.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ValidationalAlertComponent } from '../shared-modules/validationa-alert/validationa-alert.component';
+import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ValidationalAlertComponent } from '../shared-modules/validationa-alert/
     SharedNavbarComponent,
     AddCategoryComponent,
     CategoriesComponent,
-    ValidationalAlertComponent
+    ValidationalAlertComponent,
+    ViewQuizzesComponent,
   ],
   imports: [
     CommonModule,
