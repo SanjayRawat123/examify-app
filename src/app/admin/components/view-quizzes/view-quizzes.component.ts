@@ -7,8 +7,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation:ViewEncapsulation.None
 })
 export class ViewQuizzesComponent {
-  hello() {
-    console.log("Click event triggered!");
-    alert("Content clicked!");
-  }
+ 
+
+ constructor(){
+  
+ }
+
 }

@@ -5,6 +5,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 
 const routes: Routes = [
   {
@@ -18,11 +19,15 @@ const routes: Routes = [
       },
       {
         path: 'categories',
-        component: CategoriesComponent
+        component: CategoriesComponent,
       },
       {
         path: 'quizzes',
         component: ViewQuizzesComponent,
+      },
+      {
+        path: 'quizzes/add-quiz',
+        component: AddQuizComponent,
       },
       {
         path: 'profile',

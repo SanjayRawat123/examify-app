@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ValidationalAlertComponent } from '../shared-modules/validationa-alert/validationa-alert.component';
 import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.com
     CategoriesComponent,
     ValidationalAlertComponent,
     ViewQuizzesComponent,
+    AddQuizComponent
   ],
   imports: [
     CommonModule,

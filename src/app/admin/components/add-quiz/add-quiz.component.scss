@@ -1,0 +1,16 @@
+.quizFrom {
+
+    .card-header {
+        background: none;
+        border: none;
+    }
+
+    .card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 1;
+        background: none;
+        border: none;
+    }
+}
