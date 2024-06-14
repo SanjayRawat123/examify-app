@@ -30,7 +30,7 @@ export class SharedNavbarComponent implements OnInit {
     this.user = this.userService.getUser();
     console.log(this.user);
   }
-  
+
   toggleTheme() {
     this.themeService.toggleTheme();
     this.isDarkMode = this.themeService.getDarkTheme;

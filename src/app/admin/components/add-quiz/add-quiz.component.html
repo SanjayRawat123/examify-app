@@ -10,37 +10,38 @@
                 <div class="col-md-10 offset-md-1">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title">
+                        <input type="text" class="form-control" id="title" [(ngModel)]="quiz.title" name="quiz">
                     </div>
                     <div class="mb-4">
                         <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3"></textarea>
+                        <textarea class="form-control" id="description" rows="3" [(ngModel)]="quiz.description"
+                            name="description"></textarea>
                     </div>
                     <div class="row ">
                         <div class="col">
                             <label for="title" class="form-label">Maximum Marks</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" [(ngModel)]="quiz.maxMarks" name="maxMarks">
                         </div>
                         <div class="col">
                             <label for="title" class="form-label">Number Of Questions</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" [(ngModel)]="quiz.numOfQuestions"
+                                name="numberOfQuestion">
                         </div>
                         <div class="col-12 mt-4 mb-4">
                             <label for="title" class="form-label">Select Category</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="form-select" id="category" [(ngModel)]="quiz.categoryId" name="cId">
+                                <option *ngFor="let category of categories" [value]="category.cId">{{ category.title }}
+                                </option>
                             </select>
                         </div>
                         <div class="col-12  ">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                    id="flexSwitchCheckChecked" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked">Publish Status</label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="publishStatus"
+                                    [(ngModel)]="quiz.active">
+                                <label class="form-check-label" for="publishStatus">Publish Status</label>
                             </div>
                         </div>
+                        {{quiz |json}}
                         <div class="card-footer">
                             <button type="button" class="btn btn-outline-secondary me-2">
                                 Cancel

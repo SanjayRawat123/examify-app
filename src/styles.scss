@@ -6,6 +6,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+$primary: #4070f4;
 
 body {
     min-height: 100vh;
@@ -17,9 +18,10 @@ body {
     font-family: 'Poppins', sans-serif !important;
 }
 
-p{
-    color:#3a3a3a;
+p {
+    color: #3a3a3a;
 }
+
 .flex {
     display: flex;
     align-items: center;
@@ -36,7 +38,7 @@ p{
     border-radius: 50%;
 }
 
-$primary: #4070f4 ;
+
 
 
 .round {

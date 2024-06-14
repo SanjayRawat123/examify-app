@@ -55,6 +55,14 @@ export class CategoryService {
     };
   }
 
+  //  createQuiz():Observable<Data.Quiz>{
+  //    return
+  // }
+
+  // private transformQuizNgtoServer()<>{
+
+  // }
+
   getCategories(): Observable<Data.Category[]> {
     return this.readAll('category/').pipe(
       map((response: any) => response.data)
@@ -70,5 +78,4 @@ export class CategoryService {
   deleteCategoryById(id: number): Observable<any> {
     return this.delete('category', id);
   }
-  
 }

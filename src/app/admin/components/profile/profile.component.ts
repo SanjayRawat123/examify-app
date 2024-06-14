@@ -8,19 +8,17 @@ import { Data } from 'src/types/examify-interface';
   imports: [],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent implements OnInit {
   profileImageSrc: string = '/assets/user-profile/user-09.jpg'; // Default profile image path
-   user!:Data.User;
+  user!: Data.User;
 
-  constructor(private userService:UserService) {
-    
-  }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.user=  this.userService.getUser()
-    console.log(this.user)
+    this.user = this.userService.getUser();
+    console.log(this.user);
   }
 
   onFileSelected(event: any): void {
@@ -34,6 +32,4 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
-
-  
 }

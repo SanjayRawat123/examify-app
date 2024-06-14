@@ -44,4 +44,16 @@ export namespace Data {
     title: string;
     description: string;
   }
+
+  export interface Quiz {
+    qId: number;
+    title: string;
+    description: string;
+    maxMarks: string;
+    numOfQuestions: string;
+    active: boolean;
+    category: {
+      cId: number;
+    };
+  }
 }

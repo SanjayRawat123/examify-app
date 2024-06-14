@@ -1,4 +1,3 @@
-import { Data } from 'src/types/examify-interface';
 
 export class CategoryTampalte {
   private _id!: number;

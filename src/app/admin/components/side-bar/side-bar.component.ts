@@ -18,14 +18,14 @@ import { CoreMenu } from 'src/types/core-menu';
   encapsulation: ViewEncapsulation.None,
 })
 export class SideBarComponent implements OnInit {
-    isDarkMode: boolean = false;
+  isDarkMode: boolean = false;
   constructor(
     private sidebarService: SidebarCollapseService,
     private elementRef: ElementRef,
     public themeService: ThemeService
   ) {
-    this.themeService.themeChange$.subscribe(isDarkTheme => {
-      this.isDarkMode =isDarkTheme;
+    this.themeService.themeChange$.subscribe((isDarkTheme) => {
+      this.isDarkMode = isDarkTheme;
     });
   }
   ngOnInit(): void {

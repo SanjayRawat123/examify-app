@@ -16,7 +16,7 @@ import { Data } from 'src/types/examify-interface';
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.scss',
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class UserLoginComponent {
   userLoginForm!: FormGroup;
@@ -27,7 +27,7 @@ export class UserLoginComponent {
     private fb: FormBuilder,
     private userService: UserService,
     private snack: MatSnackBar,
-    private route:Router
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -59,9 +59,9 @@ export class UserLoginComponent {
           console.log(user);
           this.showSuccess();
           if (this.userService.userRole() == 'Admin') {
-            this.route.navigate(['admin'])
-          }else{
-            this.route.navigate(['user'])
+            this.route.navigate(['admin']);
+          } else {
+            this.route.navigate(['user']);
           }
         });
       },
