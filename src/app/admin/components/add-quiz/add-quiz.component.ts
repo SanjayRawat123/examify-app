@@ -30,4 +30,10 @@ export class AddQuizComponent implements OnInit {
       }
     );
   }
+
+  onsave() {
+    this.categoryService.createQuiz(this.quiz).subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

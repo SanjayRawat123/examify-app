@@ -54,6 +54,8 @@ export namespace Data {
     active: boolean;
     category: {
       cId: number;
+      description?:string;
+      title?:string
     };
   }
 }

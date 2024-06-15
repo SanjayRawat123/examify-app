@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { CategoryTampalte } from 'src/app/admin/components/add-category/tamplate/category-tmp';
+import { QuizFormTemplate } from 'src/app/admin/components/add-quiz/quiz-template-view/add-quiz';
 import { environment } from 'src/environments/environment.development';
 import { Data } from 'src/types/examify-interface';
 
@@ -38,6 +39,7 @@ export class CategoryService {
     return this.http.delete(url);
   }
 
+  /**++++++++++++++++++++++++++++++++ <>POST PUT ACTIONS <>+++++++++++++++++++++++++++++++ */
   createCategory(category: CategoryTampalte): Observable<Data.Category> {
     const categoryData: Data.Category = this.transformCategoryTmp(category);
     if (category.id) {
@@ -55,14 +57,32 @@ export class CategoryService {
     };
   }
 
-  //  createQuiz():Observable<Data.Quiz>{
-  //    return
-  // }
+  createQuiz(quiz: QuizFormTemplate): Observable<Data.Quiz> {
+    const quizData: Data.Quiz = this.transformQuizNgtoServer(quiz);
+    console.log(quizData);
+    if (quiz.id) {
+      return this.update('quiz/', quizData);
+    } else {
+      return this.create('quiz/', quizData);
+    }
+  }
 
-  // private transformQuizNgtoServer()<>{
+  private transformQuizNgtoServer(quiz: QuizFormTemplate): Data.Quiz {
+    return {
+      qId: quiz.id,
+      title: quiz.title,
+      description: quiz.description,
+      maxMarks: quiz.maxMarks,
+      numOfQuestions: quiz.numOfQuestions,
+      active: quiz.active,
+      category: {
+        cId: quiz.categoryId,
+      },
+    };
+  }
+  /**++++++++++++++++++++++++++++++++ </>POST PUT ACTIONS above </>+++++++++++++++++++++++++++++++ */
 
-  // }
-
+  /**++++++++++++++++++++++++++++++++ <>Get  PUT ACTIONS below <> +++++++++++++++++++++++++++++++ */
   getCategories(): Observable<Data.Category[]> {
     return this.readAll('category/').pipe(
       map((response: any) => response.data)
@@ -74,6 +94,16 @@ export class CategoryService {
       map((response: any) => response.data)
     );
   }
+
+  getQuizzes(): Observable<Data.Quiz[]> {
+    return this.readAll('quiz/').pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  /**++++++++++++++++++++++++++++++++ <>Get  PUT ACTIONS above <> +++++++++++++++++++++++++++++++ */
+
+
 
   deleteCategoryById(id: number): Observable<any> {
     return this.delete('category', id);
