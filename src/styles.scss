@@ -6,11 +6,13 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+
 $primary: #4070f4;
 
 body {
     min-height: 100vh;
-    background: #eef5fe !important;
+    background: #d5deef !important;
+    // background: #eef5fe !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

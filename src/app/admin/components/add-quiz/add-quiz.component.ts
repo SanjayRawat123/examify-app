@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
 import { CategoryArray, QuizFormTemplate } from './quiz-template-view/add-quiz';
 import { Data } from 'src/types/examify-interface';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-quiz',
   templateUrl: './add-quiz.component.html',
@@ -22,7 +22,6 @@ export class AddQuizComponent implements OnInit {
   loadCategories(): void {
     this.categoryService.getCategories().subscribe(
       (data: any) => {
-        console.log(data);
         this.categories = data;
       },
       (error) => {
@@ -33,7 +32,16 @@ export class AddQuizComponent implements OnInit {
 
   onsave() {
     this.categoryService.createQuiz(this.quiz).subscribe((data) => {
-      console.log(data);
+      console.log('saved quiz', data);
+      Swal.fire({
+        icon: 'success',
+        title: `${this.quiz.title} Added successfully'`,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: 'h5',
+        },
+      });
     });
   }
 }

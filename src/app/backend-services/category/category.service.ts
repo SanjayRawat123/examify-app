@@ -96,14 +96,10 @@ export class CategoryService {
   }
 
   getQuizzes(): Observable<Data.Quiz[]> {
-    return this.readAll('quiz/').pipe(
-      map((response: any) => response.data)
-    );
+    return this.readAll('quiz/').pipe(map((response: any) => response.data));
   }
 
   /**++++++++++++++++++++++++++++++++ <>Get  PUT ACTIONS above <> +++++++++++++++++++++++++++++++ */
-
-
 
   deleteCategoryById(id: number): Observable<any> {
     return this.delete('category', id);
