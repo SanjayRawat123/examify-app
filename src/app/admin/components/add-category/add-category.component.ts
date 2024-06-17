@@ -7,10 +7,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Data } from 'src/types/examify-interface';
 import { CategoryTampalte } from './tamplate/category-tmp';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
-
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',

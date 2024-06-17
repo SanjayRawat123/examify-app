@@ -3,6 +3,7 @@ import { CategoryService } from 'src/app/backend-services/category/category.serv
 import { CategoryArray, QuizFormTemplate } from './quiz-template-view/add-quiz';
 import { Data } from 'src/types/examify-interface';
 import Swal from 'sweetalert2';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-add-quiz',
   templateUrl: './add-quiz.component.html',
@@ -13,7 +14,10 @@ export class AddQuizComponent implements OnInit {
 
   categories: CategoryArray[] = [];
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.loadCategories();
@@ -42,6 +46,11 @@ export class AddQuizComponent implements OnInit {
           title: 'h5',
         },
       });
+      this.location.back();
     });
+  }
+
+  closeForm() {
+    this.location.back();
   }
 }

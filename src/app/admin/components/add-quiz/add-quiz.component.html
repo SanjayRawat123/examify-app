@@ -7,49 +7,68 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title" [(ngModel)]="quiz.title" name="quiz">
-                    </div>
-                    <div class="mb-4">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3" [(ngModel)]="quiz.description"
-                            name="description"></textarea>
-                    </div>
-                    <div class="row ">
-                        <div class="col">
-                            <label for="title" class="form-label">Maximum Marks</label>
-                            <input type="text" class="form-control" [(ngModel)]="quiz.maxMarks" name="maxMarks">
+                <form #ngForm="ngForm">
+                    <div class="col-md-10 offset-md-1">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" [(ngModel)]="quiz.title" name="quiz"
+                                #titleRef="ngModel" required>
+                            <app-validational-alert controlName="Title" [control]="titleRef"></app-validational-alert>
                         </div>
-                        <div class="col">
-                            <label for="title" class="form-label">Number Of Questions</label>
-                            <input type="text" class="form-control" [(ngModel)]="quiz.numOfQuestions"
-                                name="numberOfQuestion">
+                        <div class="mb-4">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3" [(ngModel)]="quiz.description"
+                                name="description" #descriptionRef="ngModel" required></textarea>
+
+                            <app-validational-alert controlName="Description"
+                                [control]="descriptionRef"></app-validational-alert>
+
                         </div>
-                        <div class="col-12 mt-4 mb-4">
-                            <label for="title" class="form-label">Select Category</label>
-                            <select class="form-select" id="category" [(ngModel)]="quiz.categoryId" name="cId">
-                                <option *ngFor="let category of categories" [value]="category.cId">{{ category.title }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="col-12  ">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="publishStatus"
-                                    [(ngModel)]="quiz.active">
-                                <label class="form-check-label" for="publishStatus">Publish Status</label>
+                        <div class="row ">
+                            <div class="col">
+                                <label for="title" class="form-label">Maximum Marks</label>
+                                <input type="text" class="form-control" [(ngModel)]="quiz.maxMarks" name="maxMarks"
+                                    #maxMarksRef="ngModel" required>
+
+                                <app-validational-alert controlName="Maximum Marks"
+                                    [control]="maxMarksRef"></app-validational-alert>
+                            </div>
+                            <div class="col">
+                                <label for="title" class="form-label">Number Of Questions</label>
+                                <input type="text" class="form-control" [(ngModel)]="quiz.numOfQuestions" required
+                                    #numOfQuestionsRef="ngModel" name="numberOfQuestion">
+
+                                <app-validational-alert controlName="Number Of Questions"
+                                    [control]="numOfQuestionsRef"></app-validational-alert>
+                            </div>
+                            <div class="col-12 mt-4 mb-4">
+                                <label for="title" class="form-label">Select Category</label>
+                                <select class="form-select" id="category" [(ngModel)]="quiz.categoryId" name="cId"
+                                    #categoryRef="ngModel" required>
+                                    <option *ngFor="let category of categories" [value]="category.cId">{{ category.title
+                                        }}
+                                    </option>
+                                </select>
+                                <app-validational-alert controlName="Category"
+                                    [control]="categoryRef"></app-validational-alert>
+                            </div>
+                            <div class="col-12  ">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="publishStatus"
+                                        [(ngModel)]="quiz.active">
+                                    <label class="form-check-label" for="publishStatus">Publish Status</label>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-outline-secondary me-2" (click)="closeForm()">
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary" [disabled]="ngForm.invalid"
+                                    (click)="onsave()">Save</button>
                             </div>
                         </div>
-                        {{quiz |json}}
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-outline-secondary me-2">
-                                Cancel
-                            </button>
-                            <button type="button" class="btn btn-primary" (click)="onsave()">Save</button>
-                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
