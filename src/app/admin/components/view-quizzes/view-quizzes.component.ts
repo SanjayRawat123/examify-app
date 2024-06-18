@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
 import { Data } from 'src/types/examify-interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-quizzes',
@@ -14,7 +15,7 @@ export class ViewQuizzesComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-   this.loadQuizzes();
+    this.loadQuizzes();
   }
 
   loadQuizzes(): void {
@@ -29,5 +30,37 @@ export class ViewQuizzesComponent implements OnInit {
         console.error('Error fetching categories:', error);
       }
     );
+  }
+
+  onDelete(id: number, title: string) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+      customClass: {
+        title: 'swalh5',
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteQuiz(id);
+        Swal.fire({
+          title: 'Deleted!',
+          text: `${title + id}  has been deleted.`,
+          icon: 'success',
+        });
+      }
+    });
+  }
+
+  deleteQuiz(id: number) {
+    this.categoryService.deleteQuizById(id).subscribe((data) => {
+      console.log(data);
+      this.loadQuizzes();
+    });
+  
   }
 }

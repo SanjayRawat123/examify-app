@@ -46,7 +46,6 @@ export namespace Data {
   }
 
   export interface Quiz {
-    [x: string]: string | HTMLElement | JQuery | undefined;
     qId: number;
     title: string;
     description: string;
