@@ -9,7 +9,7 @@ import {
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryTampalte } from './tamplate/category-tmp';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -30,7 +30,9 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.cId);
-    this.editCategoryById();
+    if (this.cId) {
+      this.editCategoryById();
+    }
   }
 
   editCategoryById() {

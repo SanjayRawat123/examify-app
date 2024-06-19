@@ -1,9 +1,9 @@
 <div class="container-fluid quizFrom">
     <div class="card mb-3">
         <div class="card-header">
-            <h5>
-                Add New Quiz
-            </h5>
+            <h4>
+                {{PageTitle}}
+            </h4>
         </div>
         <div class="card-body">
             <div class="row">
@@ -55,7 +55,7 @@
                             <div class="col-12  ">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" role="switch" id="publishStatus"
-                                        [(ngModel)]="quiz.active">
+                                        [(ngModel)]="quiz.active" name="publishStatus">
                                     <label class="form-check-label" for="publishStatus">Publish Status</label>
                                 </div>
                             </div>

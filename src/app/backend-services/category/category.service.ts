@@ -82,7 +82,7 @@ export class CategoryService {
   }
   /**++++++++++++++++++++++++++++++++ </>POST PUT ACTIONS above </>+++++++++++++++++++++++++++++++ */
 
-  /**++++++++++++++++++++++++++++++++ <>Get  PUT ACTIONS below <> +++++++++++++++++++++++++++++++ */
+  /**++++++++++++++++++++++++++++++++ <>Get  ACTIONS below <> +++++++++++++++++++++++++++++++ */
   getCategories(): Observable<Data.Category[]> {
     return this.readAll('category/').pipe(
       map((response: any) => response.data)
@@ -99,7 +99,10 @@ export class CategoryService {
     return this.readAll('quiz/').pipe(map((response: any) => response.data));
   }
 
-  /**++++++++++++++++++++++++++++++++ <>Get  PUT ACTIONS above <> +++++++++++++++++++++++++++++++ */
+  getQuizById(id: number): Observable<Data.Quiz> {
+    return this.readOne('quiz', id).pipe(map((response: any) => response.data));
+  }
+  /**++++++++++++++++++++++++++++++++ <>Get ACTIONS above <> +++++++++++++++++++++++++++++++ */
 
   deleteCategoryById(id: number): Observable<any> {
     return this.delete('category', id);
