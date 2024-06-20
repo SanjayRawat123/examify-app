@@ -6,6 +6,7 @@ import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
+import { ViewQuizQuestionsComponent } from './components/view-quiz-questions/view-quiz-questions.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
+      {
+        path:'quiz/questions',
+        component:ViewQuizQuestionsComponent
+      }
     ],
   },
 ];
