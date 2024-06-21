@@ -102,6 +102,12 @@ export class CategoryService {
   getQuizById(id: number): Observable<Data.Quiz> {
     return this.readOne('quiz', id).pipe(map((response: any) => response.data));
   }
+
+  getQuestionsOFSpecificQuiz(qId: number): Observable<Data.Question> {
+    return this.readOne('question/quiz', qId).pipe(
+      map((response: any) => response.data)
+    );
+  }
   /**++++++++++++++++++++++++++++++++ <>Get ACTIONS above <> +++++++++++++++++++++++++++++++ */
 
   deleteCategoryById(id: number): Observable<any> {

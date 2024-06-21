@@ -28,7 +28,7 @@
                 <i class='bx bx-trash'></i>
               </button>
               <button type="button" class="btn btn-sm btn-outline-secondary"
-                [routerLink]="['/admin/quiz/questions']">Questions</button>
+                [routerLink]="['/admin/quiz/questions', quiz.qId, quiz.title]">Questions</button>
               <button type="button" class="btn btn-sm btn-outline-primary">Attempts</button>
               <button type="button" class="btn btn-sm btn-success" [routerLink]="['/admin/quizzes/add-quiz']"
                 [queryParams]="{ qId: quiz.qId }">Edit</button>

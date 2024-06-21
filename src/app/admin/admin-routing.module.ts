@@ -35,7 +35,7 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
-        path:'quiz/questions',
+        path:'quiz/questions/:id/:title',
         component:ViewQuizQuestionsComponent
       }
     ],
