@@ -67,7 +67,7 @@ export namespace Data {
     option2: string;
     option3: string;
     option4: string;
-    Answer: string;
+    answer: string;
     quiz: Quiz;
   }
 }

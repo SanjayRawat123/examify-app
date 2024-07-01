@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 import { ViewQuizQuestionsComponent } from './components/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './components/add-question/add-question.component';
 
 const routes: Routes = [
   {
@@ -35,9 +36,13 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
-        path:'quiz/questions/:id/:title',
-        component:ViewQuizQuestionsComponent
-      }
+        path: 'quizzes/questions/:id/:title',
+        component: ViewQuizQuestionsComponent
+      },
+      {
+        path: 'quizzes/add-question',
+        component: AddQuestionComponent,
+      },
     ],
   },
 ];
@@ -46,4 +51,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

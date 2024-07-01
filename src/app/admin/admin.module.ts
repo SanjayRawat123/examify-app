@@ -12,6 +12,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { ValidationalAlertComponent } from '../shared-modules/validationa-alert/validationa-alert.component';
 import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
+import { ViewQuizQuestionsComponent } from './components/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './components/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
     CategoriesComponent,
     ValidationalAlertComponent,
     ViewQuizzesComponent,
-    AddQuizComponent
+    AddQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent
   ],
   imports: [
     CommonModule,
