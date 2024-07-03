@@ -1,17 +1,55 @@
 <div class="container-fluid quizFrom">
     <div class="card mb-3">
         <div class="card-header">
-            <h4>
-                PageTitle
-            </h4>
+            <h5 class="mb-0">
+                Adding To Quiz
+            </h5>
         </div>
         <div class="card-body">
-            <div class="row">
-                <form #ngForm="ngForm">
-                 
-                </form>
-            </div>
+            <form #ngForm="ngForm">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="quescontent" class="form-label">Write question Content</label>
+                        <textarea class="form-control" id="quescontent" rows="3" name="content"
+                            [(ngModel)]="quesData.content"></textarea>
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="optionInput1" class="form-label">Enter option 1</label>
+                        <input type="text" class="form-control" id="optionInput1" name="option1"
+                            [(ngModel)]="quesData.option1">
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="optionInput2" class="form-label">Enter option 2</label>
+                        <input type="text" class="form-control" id="optionInput2" name="option2"
+                            [(ngModel)]="quesData.option2">
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="optionInput3" class="form-label">Enter option 3</label>
+                        <input type="text" class="form-control" id="optionInput3" name="option3"
+                            [(ngModel)]="quesData.option3">
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="optionInput4" class="form-label">Enter option 4</label>
+                        <input type="text" class="form-control" id="optionInput4" name="option4"
+                            [(ngModel)]="quesData.option4">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="answerSelect" class="form-label">Select Answer</label>
+                        <select class="form-select" id="answerSelect" [(ngModel)]="quesData.answer" name="answer">
+                            <option [value]="quesData.option1">{{quesData.option1}}</option>
+                            <option [value]="quesData.option2">{{quesData.option2}}</option>
+                            <option [value]="quesData.option3">{{quesData.option3}}</option>
+                            <option [value]="quesData.option4">{{quesData.option4}}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
         </div>
-
+        <div class="card-footer d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-secondary me-2" (click)="closeForm()">
+                Cancel
+            </button>
+            <button type="button" class="btn btn-primary" [disabled]="ngForm.invalid" (click)="onSave()">Save</button>
+        </div>
     </div>
 </div>

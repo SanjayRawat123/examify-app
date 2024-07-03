@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { CategoryTampalte } from 'src/app/admin/components/add-category/tamplate/category-tmp';
+import { QuestionTemplate } from 'src/app/admin/components/add-question/template-view/questions-view';
 import { QuizFormTemplate } from 'src/app/admin/components/add-quiz/quiz-template-view/add-quiz';
 import { environment } from 'src/environments/environment.development';
 import { Data } from 'src/types/examify-interface';
@@ -12,7 +13,7 @@ import { Data } from 'src/types/examify-interface';
 export class CategoryService {
   private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   readAll(type: string): Observable<any> {
     const url = `${this.apiUrl}/${type}`;
@@ -80,6 +81,33 @@ export class CategoryService {
       },
     };
   }
+
+  createQuestionOfQuiz(quesData: QuestionTemplate): Observable<Data.Question> {
+    const quizData: Data.Question = this.transformQuesdataNgtoServer(quesData);
+    console.log("this is i am sending ",quizData);
+    if (quesData.quesId) {
+      return this.update('question/', quizData);
+    } else {
+      return this.create('question/', quizData);
+    }
+  }
+
+  private transformQuesdataNgtoServer(quesData: QuestionTemplate): Data.Question {
+    return {
+      quesId: quesData.quesId,
+      content: quesData.content,
+      image: quesData.image,
+      option1: quesData.option1,
+      option2: quesData.option2,
+      option3: quesData.option3,
+      option4: quesData.option4,
+      answer: quesData.answer,
+      quiz: {
+        qId: quesData.quizId
+      }
+    };
+  }
+
   /**++++++++++++++++++++++++++++++++ </>POST PUT ACTIONS above </>+++++++++++++++++++++++++++++++ */
 
   /**++++++++++++++++++++++++++++++++ <>Get  ACTIONS below <> +++++++++++++++++++++++++++++++ */
