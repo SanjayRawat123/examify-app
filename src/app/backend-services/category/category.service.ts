@@ -145,4 +145,9 @@ export class CategoryService {
   deleteQuizById(id: number): Observable<any> {
     return this.delete('quiz', id);
   }
+
+  deleteQuestion(id:number){
+    return this.delete('question', id);
+  }
+  
 }

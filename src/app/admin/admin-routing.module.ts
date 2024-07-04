@@ -40,7 +40,7 @@ const routes: Routes = [
         component: ViewQuizQuestionsComponent
       },
       {
-        path: 'quizzes/add-question/:qId',
+        path: 'quizzes/add-question/:qId/:title',
         component: AddQuestionComponent,
       },
     ],

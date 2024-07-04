@@ -4,7 +4,7 @@
             <h4 class="page-heading mb-0">Questions Of {{title}}</h4>
         </div>
         <div class="col-12 col-md-6 mb-2 flex justify-content-end">
-            <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/admin/quizzes/add-question',qId]">Add
+            <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/admin/quizzes/add-question',qId,title]">Add
                 question</button>
         </div>
 
@@ -47,7 +47,20 @@
                     </div>
                 </div>
                 <div class="card-footer ">
-                    <h6>Correct Answer : {{question.answer}} </h6>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <h6>Correct Answer : {{question.answer}} </h6>
+                        </div>
+                        <div class="col-md-6 col-12 flex justify-content-end ">
+                            <button type="button" class="btn-flat btn-flat-danger active" data-bs-toggle="button"
+                               (click)="onDelete(question.quesId)"  aria-pressed="true">
+                                <i class='bx bx-trash'></i>
+                            </button>
+                            <button type="button" class="btn-flat btn-flat-secondary">
+                                <i class='bx bx-edit'></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
