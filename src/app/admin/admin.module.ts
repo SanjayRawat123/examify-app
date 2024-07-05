@@ -26,14 +26,16 @@ import { AddQuestionComponent } from './components/add-question/add-question.com
     ViewQuizzesComponent,
     AddQuizComponent,
     ViewQuizQuestionsComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    
   ],
   imports: [
     CommonModule,
     NgbModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+
   ],
 })
 export class AdminModule {}

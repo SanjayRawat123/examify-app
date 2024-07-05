@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionTemplate } from './template-view/questions-view';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
 import Swal from 'sweetalert2';
 import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-add-question',
   templateUrl: './add-question.component.html',
-  styleUrl: './add-question.component.scss'
+  styleUrl: './add-question.component.scss',
+  encapsulation:ViewEncapsulation.None
 })
 export class AddQuestionComponent implements OnInit {
+
   qId: number | null = null;
 
   quesData: QuestionTemplate = new QuestionTemplate();
