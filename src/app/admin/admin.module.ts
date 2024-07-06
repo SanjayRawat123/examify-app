@@ -14,28 +14,28 @@ import { ViewQuizzesComponent } from './components/view-quizzes/view-quizzes.com
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 import { ViewQuizQuestionsComponent } from './components/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './components/add-question/add-question.component';
+import { SharedModule } from '../shared-modules/shared.module';
 
 @NgModule({
   declarations: [
     AdminComponent,
     SideBarComponent,
-    SharedNavbarComponent,
     AddCategoryComponent,
     CategoriesComponent,
-    ValidationalAlertComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
     ViewQuizQuestionsComponent,
     AddQuestionComponent,
-    
+
   ],
   imports: [
     CommonModule,
     NgbModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
 
   ],
 })
-export class AdminModule {}
+export class AdminModule { }

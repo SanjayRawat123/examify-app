@@ -10,7 +10,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ThemeService } from './ui-services/theme.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { authInterceptorProviders } from './ui-services/auth.interceptor';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
   imports: [
