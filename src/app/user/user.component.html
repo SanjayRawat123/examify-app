@@ -1,1 +1,9 @@
-<p>user works!</p>
+<div class="container-fluid">
+    <app-shared-navbar></app-shared-navbar>
+
+    <app-side-bar-user></app-side-bar-user>
+    <section class="contents"
+        [ngClass]="{'sidebar-expanded': isSidebarExpanded, 'sidebar-collapsed': !isSidebarExpanded}">
+        <router-outlet></router-outlet>
+    </section>
+</div>

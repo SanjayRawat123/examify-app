@@ -1,0 +1,39 @@
+<!-- sidebar.component.html log-back-e.svg -->
+<nav class="sidebar locked bg-body-tertiary">
+  <div class="logo_items flex">
+    <span class="nav_image">
+      <img *ngIf="!isDarkMode" src="../../../../assets/images/log-back-e.svg" alt="logo_img" />
+      <img *ngIf="isDarkMode" src="../../../../assets/images/logo3-with-e.svg" alt="logo_img" />
+    </span>
+    <span class="logo_name">
+      <span class="logo_part1">Exa</span><span class="logo_part2">mify</span>
+    </span>
+    <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
+    <i class="bx bx-x" id="sidebar-close"></i>
+  </div>
+  <div class="menu_container">
+    <div class="menu_items">
+      <ul class="menu_item">
+        <div class="menu_title flex">
+          <span class="title">Categories</span>
+          <span class="line"></span>
+        </div>
+        <li class="item" *ngFor="let item of categories">
+          <a class="link flex" routerLinkActive="active">
+            <i class="bx bi-question-square"></i>
+            <span>{{item.title}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="sidebar_profile flex">
+      <span class="nav_image">
+        <img src="/assets/user-profile/user-09.jpg" alt="profile_img" />
+      </span>
+      <div class="data_text">
+        <span class="name">David Oliva</span>
+        <span class="email">david&#64;gmail.com</span>
+      </div>
+    </div> -->
+  </div>
+</nav>

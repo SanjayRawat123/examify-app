@@ -3,15 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { SharedModule } from '../shared-modules/shared.module';
 
 
 @NgModule({
   declarations: [
-    UserComponent
+    UserComponent,
+    SideBarComponent
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UserRoutingModule,
+    SharedModule
   ]
 })
 export class UserModule { }
