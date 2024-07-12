@@ -1,0 +1,27 @@
+@import 'src/@Core-scss/variables.scss'; 
+
+.contents {
+    position: relative;
+    padding-top: 80px;
+    left: $sidebar-expanded-width;
+    width: calc(100% - $sidebar-expanded-width);
+    transition: all 0.5s ease;
+    overflow-y: auto;
+    z-index: 50;
+
+    &.sidebar-expanded {
+        left: $sidebar-expanded-width;
+        width: calc(100% - $sidebar-expanded-width); 
+    }
+
+    &.sidebar-collapsed {
+        left: 78px;
+        width: calc(100% - $sidebar-collapsed-width);
+    }
+
+    @media (max-width: 1024px) {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+}
