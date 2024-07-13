@@ -1,0 +1,23 @@
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .grid-view {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .grid-view {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    width: 100%;
+}

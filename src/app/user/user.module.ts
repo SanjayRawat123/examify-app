@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SharedModule } from '../shared-modules/shared.module';
+import { LoadQuizComponent } from './components/load-quiz/load-quiz.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
-    SideBarComponent
+    SideBarComponent,
+    LoadQuizComponent
   ],
   imports: [
     CommonModule,

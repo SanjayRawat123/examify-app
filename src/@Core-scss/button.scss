@@ -1,14 +1,7 @@
-// .btn {
-//     display: inline-block;
-//     font-weight: 400;
-//     text-align: center;
-//     padding: .786rem 1.5rem;
-//     font-size: 1rem;
-//     line-height: 1;
-// }
 
 .btn-primary {
     background-color: #0d6efd;
+
 
     &:hover {
         box-shadow: 0 1px 20px 1px rgba(13, 110, 253, 0.6);
@@ -58,12 +51,12 @@
 
     &:hover {
         background-color: rgba(40, 199, 111, 0.2);
-        color: #28c76f
+        color: #fff !important
     }
 
     &:active:focus {
         background-color: rgba(40, 199, 111, 0.3);
-        color: #28c76f
+        color: #fff !important
     }
 
     &:active::after {
@@ -75,6 +68,8 @@
 
 // flat button scss<>
 .btn-flat {
+    font-size: 14px;
+    font-weight: 500;
     background-color: transparent;
     border-radius: 5px;
     padding: 4px 8px;
@@ -124,6 +119,24 @@
 
     &:active:focus {
         background-color: rgba(130, 134, 139, .3);
+    }
+
+    &:active::after {
+        transform: scale(2.5);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.8s;
+    }
+}
+
+.btn-flat-primary {
+    color: rgb(64, 112, 244);
+
+    &:hover {
+        background-color: rgba(64, 112, 244, 0.2);
+    }
+
+    &:active:focus {
+        background-color: rgba(64, 112, 244, .3);
     }
 
     &:active::after {

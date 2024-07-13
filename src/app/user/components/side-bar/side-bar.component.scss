@@ -75,7 +75,7 @@
     justify-content: space-between;
     margin-top: 0px;
     overflow-y: auto;
-    height: calc(100% - 82px);
+    height: 90%;
 }
 
 .menu_container::-webkit-scrollbar {
@@ -150,22 +150,22 @@
     border-radius: 4px;
 }
 
-.sidebar_profile {
-    padding-top: 15px;
-    margin-top: 15px;
-    gap: 15px;
-    border-top: 2px solid rgba(0, 0, 0, 0.1);
-}
+// .sidebar_profile {
+//     padding-top: 15px;
+//     margin-top: 15px;
+//     gap: 15px;
+//     border-top: 2px solid rgba(0, 0, 0, 0.1);
+// }
 
-.sidebar_profile .name {
-    font-size: 18px;
-    color: #333;
-}
+// .sidebar_profile .name {
+//     font-size: 18px;
+//     color: #333;
+// }
 
-.sidebar_profile .email {
-    font-size: 15px;
-    color: #333;
-}
+// .sidebar_profile .email {
+//     font-size: 15px;
+//     color: #333;
+// }
 
 
 @media screen and (max-width: 1024px) {
