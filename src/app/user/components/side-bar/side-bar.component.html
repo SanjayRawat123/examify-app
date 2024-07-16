@@ -19,7 +19,7 @@
           <span class="line"></span>
         </div>
         <li class="item" *ngFor="let item of categories">
-          <a class="link flex" routerLinkActive="active">
+          <a class="link flex" routerLinkActive="active" [routerLink]="'quizzs'" [queryParams]="{categoryId: item.cId}" >
             <i class="bx bi-question-square"></i>
             <span >{{item.title}}</span>
           </a>

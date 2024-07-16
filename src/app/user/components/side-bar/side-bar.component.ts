@@ -1,16 +1,12 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
-  HostListener,
   OnInit,
-  Output,
   ViewEncapsulation,
 } from '@angular/core';
 import { CategoryService } from 'src/app/backend-services/category/category.service';
 import { SidebarCollapseService } from 'src/app/ui-services/side-bar-service/sidenar-collapse.service';
 import { ThemeService } from 'src/app/ui-services/theme.service';
-import { CoreMenu } from 'src/types/core-menu';
 import { Data } from 'src/types/examify-interface';
 
 @Component({
@@ -68,7 +64,5 @@ export class SideBarComponent implements OnInit {
       }
     );
   }
-
-
 
 }
