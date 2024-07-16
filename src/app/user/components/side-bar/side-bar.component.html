@@ -18,10 +18,17 @@
           <span class="title">Categories</span>
           <span class="line"></span>
         </div>
-        <li class="item" *ngFor="let item of categories">
-          <a class="link flex" routerLinkActive="active" [routerLink]="'quizzs'" [queryParams]="{categoryId: item.cId}" >
+        <li class="item">
+          <a class="link flex" [routerLink]="'quizzs'" [ngClass]="{'active': loadAllQuizss}" (click)="onclickAll(true)">
             <i class="bx bi-question-square"></i>
-            <span >{{item.title}}</span>
+            <span>All Quizzes</span>
+          </a>
+        </li>
+        <li class="item" *ngFor="let item of categories">
+          <a class="link flex" routerLinkActive="active" [routerLink]="'quizzs'" [queryParams]="{categoryId: item.cId}"
+            (click)="onclickAll(false)">
+            <i class="bx bi-question-square"></i>
+            <span>{{item.title}}</span>
           </a>
         </li>
       </ul>

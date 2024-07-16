@@ -1,30 +1,35 @@
 <div class="container-fluid">
     <div class="grid-view">
-        <div class="card  mb-3" *ngFor="let quiz of quizzes">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 flex mb-1">
-                        <img src="../../../../assets/category/questionary.png" alt="" width="48px" height="48px">
-                        <div class="ms-2">
-                            <h5 class="card-title mb-0">{{quiz.title}}</h5>
-                            <p class="card-text"><small class="text-body-secondary">{{quiz.category.title}}</small></p>
+        <ng-container *ngIf="quizzes.length > 0; else noQuizzes">
+            <div class="card mb-3" *ngFor="let quiz of quizzes">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 flex mb-1">
+                            <img src="../../../../assets/category/questionary.png" alt="" width="48px" height="48px">
+                            <div class="ms-2">
+                                <h5 class="card-title mb-0">{{quiz.title}}</h5>
+                                <p class="card-text"><small class="text-body-secondary">{{quiz.category.title}}</small></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <p class="card-text">{{quiz.description}}</p>
-                    </div>
-                    <div class="col-12 flex align-items-center gap-1">
-                        <span class="badge rounded-pill text-bg-light">Max Marks: {{quiz.maxMarks}}</span>
-                        <span class="badge rounded-pill text-bg-light">Questions: {{quiz.numOfQuestions}}</span>
-                    </div>
-                    <div class="col-12 flex align-items-center justify-content-end gap-1">
-                        <button type="button" class="btn-flat btn-flat-primary ">View</button>
-                        <button type="button" class="btn btn-sm  btn-outline-success ">
-                            Start
-                        </button>
+                        <div class="col-12">
+                            <p class="card-text">{{quiz.description}}</p>
+                        </div>
+                        <div class="col-12 flex align-items-center gap-1">
+                            <span class="badge rounded-pill text-bg-light">Max Marks: {{quiz.maxMarks}}</span>
+                            <span class="badge rounded-pill text-bg-light">Questions: {{quiz.numOfQuestions}}</span>
+                        </div>
+                        <div class="col-12 flex align-items-center justify-content-end gap-1">
+                            <button type="button" class="btn-flat btn-flat-primary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-success">Start</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
+        <ng-template #noQuizzes>
+            <div class="alert alert-warning" role="alert">
+                No quizzes found for this category.
+            </div>
+        </ng-template>
     </div>
 </div>

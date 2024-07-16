@@ -10,6 +10,7 @@ import { Data } from 'src/types/examify-interface';
 })
 export class LoadQuizComponent implements OnInit {
   quizzes: Data.Quiz[] = [];
+  message:string = ''
   selectedCategoryId: number = 0
   constructor(private categoryService: CategoryService, private route: ActivatedRoute) {
   }
@@ -40,11 +41,18 @@ export class LoadQuizComponent implements OnInit {
 
   loadQuizzesByCategory(categoryId: number): void {
     this.categoryService.getCategoryQuizzes(categoryId).subscribe(
-      (data) => {
-        this.quizzes = data;
+      (quizzes: Data.Quiz[]) => {
+        if (quizzes.length === 0) {
+          this.quizzes = [];
+          this.message = 'No quizzes found for this category.';
+        } else {
+          this.quizzes = quizzes;
+          this.message = '';
+        }
       },
       (error) => {
-        console.error(error);
+        console.error('Error fetching quizzes:', error);
+        this.message = 'An error occurred while fetching quizzes.';
       }
     );
   }
