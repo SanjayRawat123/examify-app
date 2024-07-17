@@ -40,7 +40,7 @@ export class LoadQuizComponent implements OnInit {
   }
 
   loadQuizzesByCategory(categoryId: number): void {
-    this.categoryService.getCategoryQuizzes(categoryId).subscribe(
+    this.categoryService.getCategoryActiveQuizzes(categoryId).subscribe(
       (quizzes: Data.Quiz[]) => {
         if (quizzes.length === 0) {
           this.quizzes = [];
