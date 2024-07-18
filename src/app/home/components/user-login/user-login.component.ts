@@ -61,7 +61,7 @@ export class UserLoginComponent {
           if (this.userService.userRole() == 'Admin') {
             this.route.navigate(['admin']);
           } else {
-            this.route.navigate(['user']);
+            this.route.navigate(['user-dashboard']);
           }
         });
       },

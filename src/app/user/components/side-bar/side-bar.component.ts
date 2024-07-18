@@ -17,7 +17,7 @@ import { Data } from 'src/types/examify-interface';
 })
 export class SideBarComponent implements OnInit {
   isDarkMode: boolean = false;
-  loadAllQuizss: boolean = false
+  loadAllQuizss: boolean = true;
   categories: Data.Category[] = [];
   constructor(
     private sidebarService: SidebarCollapseService,

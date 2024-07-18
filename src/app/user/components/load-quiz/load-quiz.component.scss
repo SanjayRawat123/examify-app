@@ -21,3 +21,9 @@
 .card {
     width: 100%;
 }
+
+.discription{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

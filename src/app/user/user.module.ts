@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SharedModule } from '../shared-modules/shared.module';
 import { LoadQuizComponent } from './components/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './components/instructions/instructions.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
     SideBarComponent,
-    LoadQuizComponent
+    LoadQuizComponent,
+    InstructionsComponent
   ],
   imports: [
     CommonModule,
