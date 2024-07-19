@@ -18,7 +18,7 @@ const routes: Routes = [
         component: LoadQuizComponent,
       },
       {
-        path: 'instructions',
+        path: 'instructions/:qId',
         component: InstructionsComponent,
       }
     ]
