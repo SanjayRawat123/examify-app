@@ -25,7 +25,15 @@ export class InstructionsComponent implements OnInit {
     )
   }
 
+  getTimeLimit(numberOfQuestions: any): number {
+    let numberOfQes = parseInt(numberOfQuestions)
+    return numberOfQes * 2;
+  }
 
+  getEachQuesMarks(numberOfQuestions:any , totalMarks:any){
+   let totalNumQues = parseInt(numberOfQuestions);
+   let totalMarksOfQuiz =  parseInt(totalMarks);
+   return totalMarksOfQuiz/totalNumQues
 
-
+  }
 }
