@@ -29,7 +29,7 @@ export class LoadQuizComponent implements OnInit {
   }
 
   loadAllQuizzes(): void {
-    this.categoryService.getQuizzes().subscribe(
+    this.categoryService.getAllActiveQuizzes().subscribe(
       (data) => {
         this.quizzes = data;
       },

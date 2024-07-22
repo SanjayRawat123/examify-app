@@ -127,6 +127,10 @@ export class CategoryService {
     return this.readAll('quiz/').pipe(map((response: any) => response.data));
   }
 
+  getAllActiveQuizzes(): Observable<Data.Quiz[]> {
+    return this.readAll('quiz/active').pipe(map((response: any) => response.data));
+  }
+
   getCategoryQuizzes(categoryId: number): Observable<Data.Quiz[]> {
     return this.readAll(`quiz/category/${categoryId}`).pipe(map((response: any) => response.data));
   }
