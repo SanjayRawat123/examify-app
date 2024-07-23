@@ -36,6 +36,6 @@
 
     </div>
     <div class="card-footer flex justify-content-center">
-        <button type="button" class="btn btn-primary" [routerLink]="['/quiz-runner', quiz?.qId]">Start Quiz</button>
+        <button type="button" class="btn btn-primary"  (click)="onStartQuiz()" >Start Quiz</button>
     </div>
 </div>
