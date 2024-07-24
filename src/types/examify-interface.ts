@@ -69,6 +69,7 @@ export namespace Data {
     option4: string;
     answer: string;
     quiz: {
+      title?: string;
       qId: number;
     };
   }

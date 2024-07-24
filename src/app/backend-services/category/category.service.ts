@@ -142,13 +142,13 @@ export class CategoryService {
     return this.readOne('quiz', id).pipe(map((response: any) => response.data));
   }
 
-  getQuestionsOFSpecificQuiz(qId: number): Observable<Data.Question> {
+  getQuestionsOFSpecificQuiz(qId: number): Observable<Data.Question[]> {
     return this.readOne('question/quiz/all', qId).pipe(
       map((response: any) => response.data)
     );
   }
 
-  getQuestionsOFSpecificQuizForTest(qId: number): Observable<Data.Question> {
+  getQuestionsOFSpecificQuizForTest(qId: number): Observable<Data.Question[]> {
     return this.readOne('question/quiz', qId).pipe(
       map((response: any) => response.data)
     );
