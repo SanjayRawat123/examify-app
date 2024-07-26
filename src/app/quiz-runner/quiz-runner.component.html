@@ -10,8 +10,8 @@
                     <div class="row">
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [value]="question.option1"
-                                    [id]="'option1_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [value]="question.option1" [id]="'option1_' + i">
                                 <label class="form-check-label" [for]="'option1_' + i">
                                     {{question.option1}}
                                 </label>
@@ -19,8 +19,8 @@
                         </div>
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [value]="question.option2"
-                                    [id]="'option2_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [value]="question.option2" [id]="'option2_' + i">
                                 <label class="form-check-label" [for]="'option2_' + i">
                                     {{question.option2}}
                                 </label>
@@ -28,8 +28,8 @@
                         </div>
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [value]="question.option3"
-                                    [id]="'option3_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [value]="question.option3" [id]="'option3_' + i">
                                 <label class="form-check-label" [for]="'option3_' + i">
                                     {{question.option3}}
                                 </label>
@@ -37,8 +37,8 @@
                         </div>
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [value]="question.option4"
-                                    [id]="'option4_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [value]="question.option4" [id]="'option4_' + i">
                                 <label class="form-check-label" [for]="'option4_' + i">
                                     {{question.option4}}
                                 </label>
@@ -47,6 +47,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-12 mt-4 flex justify-content-center">
+            <button type="button" class="btn btn-primary">Submit</button>
         </div>
     </div>
 </div>
