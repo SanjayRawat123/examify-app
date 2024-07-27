@@ -68,10 +68,12 @@ export namespace Data {
     option3: string;
     option4: string;
     answer: string;
-    givenAnser?:string;
+    givenAnswer?: string;
     quiz: {
       title?: string;
       qId: number;
+      maxMarks?: string;
+      numOfQuestions?: string;
     };
   }
 }
