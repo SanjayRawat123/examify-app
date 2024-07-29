@@ -1,4 +1,4 @@
-<div class="container-fluid pt-2">
+<div class="container-fluid pt-2" *ngIf="!isSubmit">
     <div class="row">
         <div class="col-12 mt-2 b-2">
             <h5>OnGoing Quiz <b>{{questions[0]?.quiz?.title}}</b></h5>
@@ -53,3 +53,11 @@
         </div>
     </div>
 </div>
+
+<ng-container *ngIf="isSubmit">
+    <div class="card">
+    <p><b>Marks Got: </b>{{gotMarks}}</p>
+    <p><b>Correct Answer: </b>{{correctAnswer}}</p>
+    <p><b>Questions Attempted: </b>{{attempted}}</p>
+    </div>
+</ng-container>

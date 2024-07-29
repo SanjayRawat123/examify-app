@@ -48,9 +48,9 @@ export class QuizRunnerComponent implements OnInit {
 
   onSubmit() {
     Swal.fire({
-      title: "Do you want to start quiz?",
+      title: "Do you want to submit quiz?",
       showCancelButton: true,
-      confirmButtonText: "Start",
+      confirmButtonText: "Submit",
       customClass: {
         title: 'h4'
       }
@@ -58,7 +58,7 @@ export class QuizRunnerComponent implements OnInit {
       if (result.isConfirmed) {
         console.log(this.questions);
         this.questions.forEach((q: Data.Question) => {
-          this.isSubmit
+          this.isSubmit=true
           if (q.givenAnswer === q.answer) {  // Assuming `givenAnswer` is the correct property name
             this.correctAnswer++;
             let totalMarks: any = this.questions[0]?.quiz?.maxMarks;
