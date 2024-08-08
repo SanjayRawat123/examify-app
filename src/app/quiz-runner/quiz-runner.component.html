@@ -1,8 +1,24 @@
 <div class="container-fluid pt-2" *ngIf="!isSubmit">
     <div class="row">
-        <div class="col-12 mt-2 b-2">
-            <h5>OnGoing Quiz <b>{{questions[0]?.quiz?.title}}</b></h5>
+        <div class="col-12 mt-2 mb-2">
+            <h5 *ngIf="questions.length > 0">OnGoing Quiz <b>{{questions[0].quiz.title}}</b></h5>
+
         </div>
+        <div class="col-12 mt-2 mb-2 flex justify-content-end ">
+            Time Remaining: {{ formatTime(timer) }}
+            <circle-progress
+            [percent]="persentage"
+            [radius]="40"
+            [outerStrokeWidth]="2"
+            [innerStrokeWidth]="2"
+            [outerStrokeColor]="'#808080'"
+            [innerStrokeColor]="'#e7e8ea'"
+            [animation]="true"
+            [animationDuration]="500"
+            [space]="-2"
+          ></circle-progress>
+        </div>
+
         <div class="col-12 mb-2" *ngFor="let question of questions; let i = index">
             <div class="card">
                 <div class="card-body">
@@ -10,8 +26,8 @@
                     <div class="row">
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [(ngModel)]="question.givenAnswer"
-                                    [value]="question.option1" [id]="'option1_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [(ngModel)]="question.givenAnswer" [value]="question.option1" [id]="'option1_' + i">
                                 <label class="form-check-label" [for]="'option1_' + i">
                                     {{question.option1}}
                                 </label>
@@ -19,8 +35,8 @@
                         </div>
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [(ngModel)]="question.givenAnswer"
-                                    [value]="question.option2" [id]="'option2_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [(ngModel)]="question.givenAnswer" [value]="question.option2" [id]="'option2_' + i">
                                 <label class="form-check-label" [for]="'option2_' + i">
                                     {{question.option2}}
                                 </label>
@@ -28,17 +44,17 @@
                         </div>
                         <div class="col-md-6 col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [(ngModel)]="question.givenAnswer"
-                                    [value]="question.option3" [id]="'option3_' + i">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [(ngModel)]="question.givenAnswer" [value]="question.option3" [id]="'option3_' + i">
                                 <label class="form-check-label" [for]="'option3_' + i">
                                     {{question.option3}}
                                 </label>
                             </div>
                         </div>
                         <div class="col-md-6 col-12 mb-1">
-                            <div class="form-check"> 
-                                <input class="form-check-input" type="radio" [name]="'question' + i" [(ngModel)]="question.givenAnswer"
-                                    [value]="question.option4" [id]="'option4_' + i">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" [name]="'question' + i"
+                                    [(ngModel)]="question.givenAnswer" [value]="question.option4" [id]="'option4_' + i">
                                 <label class="form-check-label" [for]="'option4_' + i">
                                     {{question.option4}}
                                 </label>
@@ -49,15 +65,21 @@
             </div>
         </div>
         <div class="col-12 mt-4 flex justify-content-center">
-            <button type="button" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+            <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
         </div>
     </div>
 </div>
 
 <ng-container *ngIf="isSubmit">
-    <div class="card">
-    <p><b>Marks Got: </b>{{gotMarks}}</p>
-    <p><b>Correct Answer: </b>{{correctAnswer}}</p>
-    <p><b>Questions Attempted: </b>{{attempted}}</p>
+    <div class="card m-3 p-2">
+        <div class="card-body">
+            <p><b>Marks Got: </b>{{gotMarks}}</p>
+            <p><b>Correct Answer: </b>{{correctAnswer}}</p>
+            <p><b>Questions Attempted: </b>{{attempted}}</p>
+        </div>
+        <div class="card-footer flex justify-content-center">
+            <button type="button" class="btn btn-primary">Print</button>
+            <button type="button" class="btn btn-secondery ms-2" [routerLink]="'/user-dashboard/quizzs'">Home</button>
+        </div>
     </div>
 </ng-container>
