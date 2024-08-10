@@ -9,6 +9,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SharedModule } from '../shared-modules/shared.module';
 import { LoadQuizComponent } from './components/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './components/instructions/instructions.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InstructionsComponent } from './components/instructions/instructions.co
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxUiLoaderModule,
   ]
 })
 export class UserModule { }

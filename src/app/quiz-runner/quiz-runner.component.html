@@ -4,19 +4,8 @@
             <h5 *ngIf="questions.length > 0">OnGoing Quiz <b>{{questions[0].quiz.title}}</b></h5>
 
         </div>
-        <div class="col-12 mt-2 mb-2 flex justify-content-end ">
+        <div class="col-12 mt-2 mb-2 pe-4 flex justify-content-end ">
             Time Remaining: {{ formatTime(timer) }}
-            <circle-progress
-            [percent]="persentage"
-            [radius]="40"
-            [outerStrokeWidth]="2"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#808080'"
-            [innerStrokeColor]="'#e7e8ea'"
-            [animation]="true"
-            [animationDuration]="500"
-            [space]="-2"
-          ></circle-progress>
         </div>
 
         <div class="col-12 mb-2" *ngFor="let question of questions; let i = index">
