@@ -64,20 +64,20 @@ export class QuizRunnerComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log(this.questions);
-        this.questions.forEach((q: Data.Question) => {
-          this.isSubmit = true
-          if (q.givenAnswer === q.answer) {  // Assuming `givenAnswer` is the correct property name
-            this.correctAnswer++;
-            let totalMarks: any = this.questions[0]?.quiz?.maxMarks;
-            let singleMarks = +totalMarks / this.questions.length;
-            this.gotMarks += singleMarks;
-          }
-          if (q.givenAnswer?.trim() != '') {
-            this.attempted++
-          }
+        // this.isSubmit = true
+        // this.questions.forEach((q: Data.Question) => {
+        //   if (q.givenAnswer === q.answer) {  // Assuming `givenAnswer` is the correct property name
+        //     this.correctAnswer++;
+        //     let totalMarks: any = this.questions[0]?.quiz?.maxMarks;
+        //     let singleMarks = +totalMarks / this.questions.length;
+        //     this.gotMarks += singleMarks;
+        //   }
+        //   if (q.givenAnswer?.trim() != '') {
+        //     this.attempted++
+        //   }
 
-        });
-        console.log("correct answer", this.correctAnswer, "gotMarks:", this.gotMarks);
+        // });
+        // console.log("correct answer", this.correctAnswer, "gotMarks:", this.gotMarks);
       }
     });
   }

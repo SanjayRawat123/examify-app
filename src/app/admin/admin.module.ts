@@ -15,6 +15,7 @@ import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 import { ViewQuizQuestionsComponent } from './components/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './components/add-question/add-question.component';
 import { SharedModule } from '../shared-modules/shared.module';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SharedModule } from '../shared-modules/shared.module';
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgxUiLoaderModule
 
   ],
 })
