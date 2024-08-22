@@ -13,14 +13,12 @@ import Swal from 'sweetalert2';
 export class QuizRunnerComponent implements OnInit {
   quizId: number;
   questions: Data.Question[] = [];
-  correctAnswer: number = 0;
-  gotMarks: number = 0;
-  attempted: number = 0;
   isSubmit: boolean = false;
   timer: number = 0;
   interval: any;
   totalDuration: number = 0;
-  persentage:any
+  persentage: any
+  result:any;
   constructor(private route: ActivatedRoute, private locationState: LocationStrategy,
     private categoryService: CategoryService) {
     this.quizId = route.snapshot.params['qId'];
@@ -64,23 +62,15 @@ export class QuizRunnerComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log(this.questions);
-        // this.isSubmit = true
-        // this.questions.forEach((q: Data.Question) => {
-        //   if (q.givenAnswer === q.answer) {  // Assuming `givenAnswer` is the correct property name
-        //     this.correctAnswer++;
-        //     let totalMarks: any = this.questions[0]?.quiz?.maxMarks;
-        //     let singleMarks = +totalMarks / this.questions.length;
-        //     this.gotMarks += singleMarks;
-        //   }
-        //   if (q.givenAnswer?.trim() != '') {
-        //     this.attempted++
-        //   }
-
-        // });
-        // console.log("correct answer", this.correctAnswer, "gotMarks:", this.gotMarks);
+        this.categoryService.evaluateQuiz(this.questions).subscribe(response => {
+          console.log('Quiz evaluation result:', response);
+          this.isSubmit =true;
+          this.result =response;
+        });
       }
     });
   }
+
 
   startTimer() {
     this.interval = setInterval(() => {
@@ -109,10 +99,5 @@ export class QuizRunnerComponent implements OnInit {
     }
   }
 
-  getProgress(): number {
-    const progress = ((this.totalDuration - this.timer) / this.totalDuration) * 100;
-    console.log(`Progress Calculated: ${progress}`); 
-   this.persentage = this.persentage +progress;
-    return progress;
-  }
+
 }

@@ -62,9 +62,11 @@
 <ng-container *ngIf="isSubmit">
     <div class="card m-3 p-2">
         <div class="card-body">
-            <p><b>Marks Got: </b>{{gotMarks}}</p>
-            <p><b>Correct Answer: </b>{{correctAnswer}}</p>
-            <p><b>Questions Attempted: </b>{{attempted}}</p>
+            <h3>Quiz Results</h3>
+            <p>Marks Obtained: {{result.marksGot}}</p>
+            <p>Correct Answers: {{result.correctAnswers}}</p>
+            <p>Questions Attempted: {{result.attempted}}</p>
+            <p>Total Questions: {{result.totalQuestions}}</p>
         </div>
         <div class="card-footer flex justify-content-center">
             <button type="button" class="btn btn-primary">Print</button>
@@ -72,3 +74,7 @@
         </div>
     </div>
 </ng-container>
+
+<div *ngIf="result">
+
+</div>

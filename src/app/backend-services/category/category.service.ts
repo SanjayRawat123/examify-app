@@ -108,6 +108,15 @@ export class CategoryService {
     };
   }
 
+
+  // evalQuestionOfQuiz(quesData: Data.Question[]): Observable<Data.Question[]> {
+  //   return this.create('question/eval-quiz', quesData);
+  // }
+
+  evaluateQuiz(questions: Data.Question[]): Observable<Data.Question[]> {
+    return this.create('question/eval-quiz', questions);
+  }
+
   /**++++++++++++++++++++++++++++++++ </>POST PUT ACTIONS above </>+++++++++++++++++++++++++++++++ */
 
   /**++++++++++++++++++++++++++++++++ <>Get  ACTIONS below <> +++++++++++++++++++++++++++++++ */
@@ -153,6 +162,8 @@ export class CategoryService {
       map((response: any) => response.data)
     );
   }
+
+
   /**++++++++++++++++++++++++++++++++ <>Get ACTIONS above <> +++++++++++++++++++++++++++++++ */
 
   deleteCategoryById(id: number): Observable<any> {
