@@ -4,7 +4,7 @@ import { Observable, map } from 'rxjs';
 import { CategoryTampalte } from 'src/app/admin/components/add-category/tamplate/category-tmp';
 import { QuestionTemplate } from 'src/app/admin/components/add-question/template-view/questions-view';
 import { QuizFormTemplate } from 'src/app/admin/components/add-quiz/quiz-template-view/add-quiz';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { Data } from 'src/types/examify-interface';
 
 @Injectable({

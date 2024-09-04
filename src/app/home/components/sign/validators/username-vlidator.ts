@@ -7,7 +7,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { debounceTime, map, catchError, switchMap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class UsernameValidator implements AsyncValidator {
