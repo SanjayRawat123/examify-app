@@ -28,5 +28,5 @@ jobs:
         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
         REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
-        SOURCE: "dist/examify-app/"  
+        SOURCE: "dist/examify-app/"
         TARGET: "/home/ec2-user/ng-examify-app/"  
