@@ -30,12 +30,3 @@ jobs:
           REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
           SOURCE: "dist/examify-app/"
           TARGET: "/home/ec2-user/ng-examify-app/"
-
-      - name: Reload Nginx
-        uses: appleboy/ssh-action@v0.1.1
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          script: |
-            sudo systemctl restart nginx
