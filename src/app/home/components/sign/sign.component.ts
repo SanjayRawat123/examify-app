@@ -10,6 +10,7 @@ import { UserService } from 'src/app/backend-services/user-service/user.service'
 import { Data } from 'src/types/examify-interface';
 import { HttpResponse } from '@angular/common/http';
 import { UsernameValidator } from './validators/username-vlidator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign',
@@ -22,8 +23,9 @@ export class SignComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private usernameValidator: UsernameValidator
-  ) {}
+    private usernameValidator: UsernameValidator,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.userSignupForm = this.fb.group(
@@ -80,9 +82,10 @@ export class SignComponent implements OnInit {
       profile: 'default.png',
     };
     this.userService.createUser(user).subscribe(
-      (response: HttpResponse<any>) => {
-        if (response.status === 201) {
-          console.log('User created successfully', response.body);
+      (response: any) => {
+        console.log(response);
+        if (response.status = "status") {
+          this.router.navigate(["home/user/login"])
         } else {
           console.log('Unexpected status code', response.status);
         }
