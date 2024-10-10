@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     public themeService: ThemeService,
-    private userService: UserService
+    private userService: UserService 
   ) {}
 
   ngOnInit(): void {

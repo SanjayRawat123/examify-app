@@ -83,7 +83,7 @@ export class SignComponent implements OnInit {
     };
     this.userService.createUser(user).subscribe(
       (response: any) => {
-        console.log(response);
+        console.log("after sinup",response);
         if (response.status = "status") {
           this.router.navigate(["home/user/login"])
         } else {

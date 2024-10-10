@@ -18,9 +18,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Angular Application
-        run: npm run build --prod
-
+      - name: Build Angular Application for prod
+        run: npm run build --configuration=production
+      
       - name: Transfer Build Folder to EC2 Instance
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
