@@ -6,13 +6,14 @@ import { adminGuard } from './ui-services/admin-guard/admin.guard';
 import { userGuard } from './ui-services/user-guard/user.guard';
 
 const routes: Routes = [
+
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
     canActivate: [AuthGuard],
   },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
 
   {
     path: 'admin',
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'quiz-runner/:qId', loadChildren: () => import('./quiz-runner/quiz-runner.module').then(m => m.QuizRunnerModule),
     canActivate:[userGuard]
    },
+
+  { path: 'portfolio', loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule) },
 
   { path: '**', component: NotFoundComponent },
 ];

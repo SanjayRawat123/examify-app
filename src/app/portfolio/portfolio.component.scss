@@ -1,0 +1,258 @@
+// /* General link styles */
+// .navbar-nav .nav-link {
+//     position: relative;
+//     text-decoration: none;
+//     margin-right: 10px;
+//     transition: color 0.3s ease;
+// }
+
+// /* Hover effect: Bottom border animation */
+// .navbar-nav .nav-link::after {
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 0;
+//     height: 2px;
+//     background-color: #fff;
+//     transition: width 0.3s ease;
+// }
+
+// /* On hover, expand the bottom border */
+// .navbar-nav .nav-link:hover::after {
+//     width: 100%;
+// }
+
+// /* Change color on hover */
+// .navbar-nav .nav-link:hover {
+//     color: #6ea8fe;
+// }
+
+// /* Active link: Border stays visible */
+// .navbar-nav .active::after {
+//     width: 100%;
+// }
+
+// /* Adjust navbar height */
+// .navbar {
+//     padding: 1rem;
+// }
+
+
+// /* Hero Section */
+// .hero-section {
+//     margin-top: 100px;
+//     height: 100vh;
+//     background-color: #000; /* Use a dark background to match your design */
+//     //   display: flex;
+//     //   align-items: center;
+//     //   justify-content: center;
+//     position: relative;
+//     overflow: hidden;
+//     border: 1px solid #dee12e;
+// }
+
+/* Wrapper for the image to better control its size and position */
+// .hero-image-wrapper {
+//     position: relative;
+//     width: 250px;
+//     /* Adjust based on design */
+//     height: 250px;
+//     margin: 0 auto;
+//     overflow: hidden;
+//     background-color: 2px solid #dee12e;
+//     border-radius: 50%;
+//     /* Optional: Circle the image */
+//     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+//     /* Add depth */
+// }
+
+// /* Image Styling */
+// .hero-image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     /* Ensures the image scales without distortion */
+//     transition: transform 0.3s ease-in-out;
+// }
+
+// /* Optional Hover Effect */
+// .hero-image:hover {
+//     transform: scale(1.05);
+//     /* Subtle zoom effect */
+// }
+
+// /* Hero Content Styling */
+// .hero-content {
+//     margin-top: 2rem;
+//     /* Space between image and content */
+//     color: white;
+//     z-index: 2;
+// }
+
+// .hero-title {
+//     font-size: 3rem;
+//     font-weight: bold;
+//     margin-bottom: 1rem;
+// }
+
+// .hero-subtitle {
+//     font-size: 1.2rem;
+//     color: #ddd;
+// }
+
+// /* Responsive Design */
+// @media (max-width: 768px) {
+//     .hero-image-wrapper {
+//         width: 180px;
+//         height: 180px;
+//     }
+
+//     .hero-title {
+//         font-size: 2rem;
+//     }
+// }
+
+
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* Offcanvas customization */
+.offcanvas {
+    width: 250px;
+    /* Adjust as needed */
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Base Styles for Both Hero Sections */
+.hero-section-mobile,
+.hero-section-desktop {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid red;
+}
+
+// .card {
+//     border-radius: 0;
+//     height: 100%;
+//     border: none;
+// }
+
+// .card-img-overlay {
+//     background-color: rgba(0, 0, 0, 0.5);
+//     /* Dark overlay for text */
+//     color: white;
+//     text-align: center;
+// }
+
+// /* Mobile Section: Ensure Full Image Without Cropping */
+// .hero-section-mobile .card-img {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//     /* Cover the entire section */
+//     object-position: center;
+//     /* Center the image */
+// }
+
+// /* Desktop Section: Cover Section Without Stretching */
+// .hero-section-desktop .card-img {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//     /* Cover the entire section */
+//     object-position: center;
+//     /* Center the image */
+// }
+
+// /* Media Query for Larger Screens */
+// @media (min-width: 768px) {
+//     .card-title {
+//         font-size: 3rem;
+//         /* Larger text on desktops */
+//     }
+// }
+
+
+
+$primary-color: #00ff9d;
+$bg-color: #0d0f15;
+$highlight-color: #ffeb3b;
+
+.portfolio-container {
+    background-color: $bg-color;
+    min-height: 100vh;
+    color: white;
+    padding: 1rem;
+    border-radius: 0;
+    .intro-text {
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+
+    .display-4 {
+        font-weight: bold;
+
+        .highlight-text {
+            color: $highlight-color;
+        }
+    }
+
+    .description-text {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        color: #bbb;
+    }
+
+    .btn-container {
+        margin-top: 30px;
+
+        .btn {
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+
+            &.btn-warning {
+                background-color: $highlight-color;
+                color: $bg-color;
+            }
+
+            &.btn-outline-light {
+                border-color: $highlight-color;
+                color: white;
+            }
+        }
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border: 5px solid $highlight-color;
+        margin-top: 20px;
+    }
+}
