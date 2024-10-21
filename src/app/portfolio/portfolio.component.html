@@ -1,75 +1,66 @@
-<nav class="navbar fixed-top navbar-expand-sm bg-dark" data-bs-theme="dark">
+<nav class="navbar fixed-top navbar-expand-sm bg-dark" [class.scroll-active]="isScrolled" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Sanjay</a>
 
-        <!-- Navbar Toggle Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Offcanvas Menu -->
         <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header p-3">
+            <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                <button type="button" class="btn-close btn-close-white mr-2" data-bs-dismiss="offcanvas"
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body p-2">
+            <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">About</a>
+                        <a class="nav-link" (click)="scrollToSection('about')" data-bs-dismiss="offcanvas">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" (click)="scrollToSection('project')" data-bs-dismiss="offcanvas">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" (click)="scrollToSection('contact')" data-bs-dismiss="offcanvas">Contact</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section for Mobile
-<section class="hero-section-mobile d-md-none">
-    <div class="card text-bg-dark">
-        <img src="./assets/portfilo.images/hero-section-imag-Photoroom.png" class="card-img"
-            alt="Hero Image for Mobile">
-        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
-            <h1 class="card-title">Welcome to My Portfolio M</h1>
-            <p class="card-text">Explore my work and get to know me better through this journey!</p>
-            <p class="card-text"><small>Updated just now</small></p>
-        </div>
-    </div>
-</section> -->
 
 <!-- Hero Section for Desktop/Larger Screens -->
-<section class="hero-section-desktop" style="margin-top: 60px;">
-    <div class="container-fluid portfolio-container">
+<section class="hero-section" style="margin-top: 60px;">
+    <div class="container-fluid hero-section-container">
         <div class="row ">
-            <div class="col-md-8 text-start d-flex flex-column justify-content-center align-items-center"  style="border: 1px solid red;  min-height: 100vh;">
-                <p class="intro-text">Hey There, I'm Faruque Hossain</p>
-                <h1 class="display-4">I'M A <span class="highlight-text">Web</span> Develpor</h1>
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                <img src="./assets/portfilo.images/hero-section-imag-Photoroom.png" alt="Profile Picture"
+                    class="img-fluid profile-image rounded-circle">
+                <p class="intro-text">Hey There, I'm Sanjay</p>
+                <h3 class="display-4"><span class="highlight-text" #typedElement></span> Developer</h3>
                 <p class="description-text">
-                    Are you looking for a Web Develpor who works hard but stays humble?
+                    Are you looking for a Full Stack Developer who works hard but stays humble?
                 </p>
                 <div class="btn-container">
                     <button class="btn btn-warning me-2">Resume</button>
                     <button class="btn btn-outline-light">Hire me</button>
                 </div>
             </div>
-            <div class="col-md-4 d-flex align-items-center justify-content-center " style="border: 1px solid red;  min-height: 100vh;">
-                <img src="./assets/portfilo.images/hero-section-imag-Photoroom.png" alt="Profile Picture"
-                    class="img-fluid profile-image rounded-circle">
-            </div>
         </div>
     </div>
 </section>
 
-<section>
-    <h2>hterau</h2>
+<section #about style="margin-top: 100px;">
+    <h2>About Section</h2>
+</section>
+
+<section #project style="margin-top: 100px;">
+    <h2>Project Section</h2>
+</section>
+
+<section #contact style="margin-top: 100px;">
+    <h2>Contact Section</h2>
 </section>
