@@ -17,10 +17,12 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('about')" data-bs-dismiss="offcanvas">About</a>
+                        <a class="nav-link active" (click)="scrollToSection('about')"
+                            data-bs-dismiss="offcanvas">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('project')" data-bs-dismiss="offcanvas">Projects</a>
+                        <a class="nav-link" (click)="scrollToSection('project')"
+                            data-bs-dismiss="offcanvas">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="scrollToSection('contact')" data-bs-dismiss="offcanvas">Contact</a>
@@ -33,13 +35,13 @@
 
 
 <!-- Hero Section for Desktop/Larger Screens -->
-<section class="hero-section" style="margin-top: 60px;">
+<section class="hero-section mt-3">
     <div class="container-fluid hero-section-container">
         <div class="row ">
             <div class="col-12 d-flex flex-column justify-content-center align-items-center">
                 <img src="./assets/portfilo.images/hero-section-imag-Photoroom.png" alt="Profile Picture"
                     class="img-fluid profile-image rounded-circle">
-                <p class="intro-text">Hey There, I'm Sanjay</p>
+                <p class="intro-text">Hello! I'm Sanjay</p>
                 <h3 class="display-4"><span class="highlight-text" #typedElement></span> Developer</h3>
                 <p class="description-text">
                     Are you looking for a Full Stack Developer who works hard but stays humble?
@@ -53,8 +55,72 @@
     </div>
 </section>
 
-<section #about style="margin-top: 100px;">
-    <h2>About Section</h2>
+<section #about id="about" class="about-section mt-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="highlight-heading">About Me</h1>
+                <!-- <span class="timeline-circle"></span> -->
+                <h5 class="sub-heading">Overview</h5>
+                <p class="description-text">
+                    Hi, I’m <span class="highlight-text">Sanjay Singh Rawat</span>, a dedicated and innovative
+                    <span class="highlight-text">Full Stack Developer</span> with a passion for building
+                    scalable web applications. With hands-on experience in both frontend and backend development, I
+                    excel in crafting seamless user experiences and robust server-side logic.
+                </p>
+                <p class="description-text mt-2">
+                    I’ve worked on exciting projects like <b>Examify</b>—an online exam management portal—and backend
+                    services
+                    for <b>Natours</b> using cutting-edge technologies such as Node.js, Express.js, MongoDB, and
+                    Angular. My
+                    expertise spans from designing interactive frontends to developing RESTful APIs with secure
+                    authentication mechanisms using JWT.
+                </p>
+
+                <!-- Skill Set Section -->
+                <h5 class="sub-heading">My Skill Set:</h5>
+                <ul class="skill-list ">
+                    <li><strong>Languages & Frameworks:</strong>&nbsp; Java,&nbsp; Spring Boot, &nbsp;Node.js,
+                        &nbsp;Express.js,
+                        &nbsp;Angular</li>
+                    <li><strong>Web Technologies:</strong>&nbsp; HTML5, &nbsp;CSS3, &nbsp;JavaScript, &nbsp;Bootstrap
+                    </li>
+                    <li><strong>Tools & Platforms:</strong> &nbsp;Docker, &nbsp;Git, &nbsp;Postman</li>
+                    <li><strong>Databases:</strong> &nbsp;MySQL, &nbsp;MongoDB, &nbsp;PostgreSQL</li>
+                    <li><strong>Other Skills:</strong> &nbsp;Microservices, &nbsp;Sprint &nbsp;Planning, &nbsp;CI/CD
+                    </li>
+                </ul>
+                <p class="description-text">I thrive in collaborative environments, working closely with designers and
+                    developers to deliver high-quality software solutions. My journey has also included valuable
+                    training in Full Stack Development from NIIT and certifications in Web Design.</p>
+                <h5 class="sub-heading">My Passion:</h5>
+                <p class="description-text">I love learning continuously and exploring emerging technologies that can
+                    enhance development workflows. Whether it’s optimizing code or solving frontend challenges, I’m
+                    driven to deliver exceptional results.</p>
+            </div>
+
+            <!-- Right: Education Timeline -->
+            <!-- <div class="col-md-6">
+                <h2 class="highlight-heading">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-circle"></span>
+                        <h4>MASTER OF FINE ARTS & GRAPHIC DESIGN</h4>
+                        <h6>2015 - 2016</h6>
+                        <p>Rochester Institute of Technology, Rochester, NY</p>
+                        <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam justo autem sit. Ea vero voluptatem.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-circle"></span>
+                        <h4>BACHELOR OF FINE ARTS & GRAPHIC DESIGN</h4>
+                        <h6>2010 - 2014</h6>
+                        <p>Rochester Institute of Technology, Rochester, NY</p>
+                        <p>Quia nobis sequi est occaecati aut. Repudiandae et justo quae reiciendis et quis.</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
 </section>
 
 <section #project style="margin-top: 100px;">

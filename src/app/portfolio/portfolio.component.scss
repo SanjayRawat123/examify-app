@@ -1,7 +1,8 @@
 /* General link styles */
 $primary-color: #00ff9d;
-$bg-color: #0d0f15;
+$bg-color: #031718;
 $highlight-color: #ffeb3b;
+
 /* Reset and basic styling */
 * {
     margin: 0;
@@ -12,7 +13,7 @@ $highlight-color: #ffeb3b;
 html,
 body {
     height: 100%;
-    font-family: Arial, sans-serif;
+
 }
 
 
@@ -30,6 +31,7 @@ body {
     text-decoration: none;
     margin-right: 10px;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 /* Hover effect: Bottom border animation */
@@ -40,7 +42,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    
+
 }
 
 @media (min-width: 768px) {
@@ -83,7 +85,7 @@ body {
 /* Offcanvas customization */
 .offcanvas {
     width: 250px;
-    padding: 1rem ;
+    padding: 1rem;
 }
 
 .offcanvas-header {
@@ -102,6 +104,7 @@ body {
     width: 100%;
     position: relative;
     overflow: hidden;
+    // border-bottom:1px solid rgb(255, 235, 59,.6) ;
 }
 
 .hero-section-container {
@@ -145,11 +148,14 @@ body {
 
             &.btn-warning {
                 background-color: $highlight-color;
-                color: $bg-color;
+                color: $bg-color !important;
+
+
             }
 
             &.btn-outline-light {
-                border-color: $highlight-color;
+                border-color: $highlight-color ;
+                background-color: transparent;
                 color: white;
             }
         }
@@ -209,3 +215,51 @@ body {
 /***************************************
   Hero section area SCSS above  
   *************************************/
+
+
+/***************************************
+  About section SCSS area  below  
+  *************************************/
+// .highlight-heading  {
+//     font-weight: 400;
+//     color: $highlight-color;
+// }
+
+.about-section {
+    color: #c5c6c7;
+    background-color: #031718;
+    padding: 2rem;
+}
+
+.highlight-text {
+    font-size: 1.2rem;
+    color: $primary-color;
+}
+
+
+.highlight-heading {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.sub-heading {
+    color: #66fcf1;
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}
+
+.description-text {
+    color: #c5c6c7;
+    line-height: 1.6;
+}
+
+
+.skill-list {
+    padding-left: 2%;
+}
+
+.skill-list li {
+    color: #c5c6c7;
+    margin-bottom: 0.7rem;
+    // font-size: 1rem;
+}
