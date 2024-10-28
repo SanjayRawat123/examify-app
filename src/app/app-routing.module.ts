@@ -13,7 +13,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
 
   {
     path: 'admin',
@@ -31,7 +31,7 @@ const routes: Routes = [
     canActivate:[userGuard]
    },
 
- 
+  { path: 'portfolio', loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule) },
 
   { path: '**', component: NotFoundComponent },
 ];
