@@ -13,7 +13,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
-  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   {
     path: 'admin',
@@ -30,8 +30,6 @@ const routes: Routes = [
   { path: 'quiz-runner/:qId', loadChildren: () => import('./quiz-runner/quiz-runner.module').then(m => m.QuizRunnerModule),
     canActivate:[userGuard]
    },
-
-  { path: 'portfolio', loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule) },
 
   { path: '**', component: NotFoundComponent },
 ];
